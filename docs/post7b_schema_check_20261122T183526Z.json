@@ -1,0 +1,13 @@
+{
+  "stamp": "20261122T183526Z",
+  "copy": "C:\\FrontierAtlas-test\\post7b-20261122T183526Z\\platform.copy.db",
+  "head": "0002_history_tables",
+  "production_revision": "0002_history_tables",
+  "upgrade_head_noop": true,
+  "orm_matches_schema": true,
+  "integrity": "ok",
+  "foreign_key_violations": 0,
+  "production_sha256_before": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+  "production_sha256_after": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+  "result": "PASS"
+}

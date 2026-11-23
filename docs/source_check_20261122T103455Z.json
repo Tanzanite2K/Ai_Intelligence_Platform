@@ -1,0 +1,124 @@
+{
+  "checked_at": "2026-11-22T10:34:37.988239+00:00",
+  "database_written": false,
+  "sources": {
+    "venturebeat_ai": {
+      "verdict": "FAIL",
+      "feed_url": "https://venturebeat.com/feed/",
+      "robots_http_status": 200,
+      "project_allows": true,
+      "stdlib_allows": true,
+      "feed_response": {
+        "method": "GET",
+        "url": "https://venturebeat.com/feed/",
+        "http_status": 429,
+        "error": "FetchError: HTTP 429 (rate limited after 5 attempts)",
+        "retry_after_s": null
+      },
+      "crawler_status": "FAILED",
+      "feed_items": 0,
+      "fresh_items_24h": 0,
+      "errors": [
+        "feed rate-limited by publisher (HTTP 429 (rate limited after 5 attempts)); next attempt after 2026-11-22T10:49:37.988525+00:00"
+      ],
+      "cooldown_until": "2026-11-22T10:49:37.988525+00:00",
+      "requests_made": [
+        "https://venturebeat.com/robots.txt",
+        "https://venturebeat.com/feed/"
+      ]
+    },
+    "producthunt": {
+      "verdict": "CREDENTIAL REQUIRED",
+      "http_status": 401,
+      "detail": "Product Hunt rejected PRODUCTHUNT_TOKEN (HTTP 401, error code: invalid_oauth_token - Please supply a valid access token. Refer to our api documentation about how to authorize an api request. Please also make sure you require the correct scopes. ); action required: create/open your app at https://api.producthunt.com/v2/oauth/applications and put its Developer Token (not the API Key or API Secret) in PRODUCTHUNT_TOKEN; see docs/SOURCE_HEALTH.md",
+      "token_length": 43
+    },
+    "the_decoder": {
+      "verdict": "DISABLED (manual)",
+      "feed_url": "https://the-decoder.com/feed/",
+      "reason": "robots.txt disallows */feed/ for all user agents (checked 2026-11-21); the feed answered HTTP 403. Not crawled. Re-enable only with the publisher's written permission or a licensed feed.",
+      "requests_made": []
+    },
+    "arstechnica_ai": {
+      "verdict": "PASS",
+      "feed_url": "https://arstechnica.com/ai/feed/",
+      "robots_http_status": 405,
+      "project_allows": true,
+      "stdlib_allows": true,
+      "feed_response": {
+        "method": "GET",
+        "url": "https://arstechnica.com/ai/feed/",
+        "http_status": 200,
+        "final_url": null,
+        "content_type": "application/rss+xml; charset=UTF-8",
+        "bytes": 78128,
+        "retry_after": null,
+        "elapsed_s": 0.69,
+        "body_excerpt": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:atom=\"http://www.w3.org/2005/Atom\" x"
+      },
+      "crawler_status": "OK",
+      "feed_items": 20,
+      "fresh_items_24h": 0,
+      "errors": [],
+      "cooldown_until": null,
+      "requests_made": [
+        "https://arstechnica.com/robots.txt",
+        "https://arstechnica.com/ai/feed/",
+        "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/"
+      ],
+      "failing_article": {
+        "method": "GET",
+        "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/",
+        "http_status": 405,
+        "final_url": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 2103,
+        "retry_after": null,
+        "elapsed_s": 0.23,
+        "body_excerpt": "<!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Human Verification</title> <style> body { font-family: \"Arial"
+      }
+    },
+    "research_papers": {
+      "verdict": "PASS",
+      "token_configured": true,
+      "authenticated": true,
+      "limit_per_hour": 5000,
+      "remaining": 4997,
+      "resets_at": "2026-11-22T11:08:49+00:00",
+      "probe_repo": {
+        "repo": "huggingface/transformers",
+        "stars": 169350
+      }
+    },
+    "yc_startups": {
+      "verdict": "PASS",
+      "endpoints": [
+        {
+          "url": "https://yc-oss.github.io/api/tags/artificial-intelligence.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/generative-ai.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/machine-learning.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/ai.json",
+          "status": 200
+        }
+      ],
+      "parsed_sample": [
+        "Directed Edge",
+        "JustSpotted",
+        "Canopy Labs",
+        "Semantics3",
+        "Casetext"
+      ],
+      "parser_status": "OK",
+      "errors": []
+    }
+  }
+}

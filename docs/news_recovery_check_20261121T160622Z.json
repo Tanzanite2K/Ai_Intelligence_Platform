@@ -1,0 +1,98 @@
+{
+  "run_at": "2026-11-21T16:06:22Z",
+  "mode": "check",
+  "database": "data\\platform.db",
+  "config": {
+    "gemini_model": "gemini-3.1-flash-lite",
+    "providers_order": [
+      "gemini",
+      "groq",
+      "deepseek"
+    ],
+    "providers_configured": [
+      "gemini"
+    ],
+    "retries_per_provider": 5,
+    "backoff_s": [
+      2.0,
+      30.0
+    ]
+  },
+  "scope": {
+    "dead_letters": 16,
+    "distinct_keys": 16,
+    "already_tagged": [],
+    "missing_records": [],
+    "no_text": [],
+    "untagged_news_total": 16,
+    "untagged_news_not_dead_lettered": [],
+    "news_total": 16,
+    "targets": 16
+  },
+  "targets": [
+    {
+      "url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+      "title": "The most misunderstood graph in AI just got a major update"
+    },
+    {
+      "url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "title": "Trump threatens \u2018tremendous tax\u2019 for moving AI data centers outside the US"
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+      "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude"
+    },
+    {
+      "url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
+      "title": "The week everything fell apart"
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+      "title": "Signal is blocking Gemini and Siri AI from reading your screen"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
+      "title": "Daniel Ek backs AI researcher\u2019s fusion power startup. Here\u2019s what they\u2019re building."
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too",
+      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis \u2014 and a human did, too"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing",
+      "title": "Chips can survive the space environment \u2014 can their financing?"
+    },
+    {
+      "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues",
+      "title": "The fallout from Nvidia\u2019s Jensen Huang scandal continues"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter",
+      "title": "Six AI-powered gadgets that could make your home office smarter"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar",
+      "title": "Google rolls out new search homepage with AI chat history and no search button"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers"
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced."
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models",
+      "title": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index"
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model",
+      "title": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only"
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model",
+      "title": "NVIDIA AI Releases Nemotron-Labs-Sigma, a Continuous Diffusion Language Model with 14 checkpoints at 3B/8B"
+    }
+  ]
+}

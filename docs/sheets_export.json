@@ -1,0 +1,58 @@
+{
+  "rows": {
+    "Startups": 2509,
+    "Products": 1800,
+    "Research Papers": 2290,
+    "Jobs": 54,
+    "News": 6,
+    "Entity Mapping Log": 4997
+  },
+  "sheet_url": "https://docs.google.com/spreadsheets/d/<sheet-id-redacted>",
+  "grid_expanded": {
+    "Entity Mapping Log": {
+      "rows_before": 4893,
+      "rows_after": 4998,
+      "cols_before": 26,
+      "cols_after": 26
+    }
+  },
+  "sheets_verification": {
+    "tabs": [
+      "Startups",
+      "Products",
+      "Research Papers",
+      "Jobs",
+      "News",
+      "Entity Mapping Log"
+    ],
+    "exactly_six_expected_tabs": true,
+    "data_rows": {
+      "Startups": 2509,
+      "Products": 1800,
+      "Research Papers": 2290,
+      "Jobs": 54,
+      "News": 6,
+      "Entity Mapping Log": 4997
+    },
+    "expected_rows": {
+      "Startups": 2509,
+      "Products": 1800,
+      "Research Papers": 2290,
+      "Jobs": 54,
+      "News": 6,
+      "Entity Mapping Log": 4997
+    },
+    "rows_match": true,
+    "headers_match": {
+      "Startups": true,
+      "Products": true,
+      "Research Papers": true,
+      "Jobs": true,
+      "News": true,
+      "Entity Mapping Log": true
+    },
+    "public_link_reader": false
+  },
+  "sheets_api_requests": 24,
+  "sheets_ok": true
+}

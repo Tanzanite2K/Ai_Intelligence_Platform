@@ -1,0 +1,45 @@
+﻿{
+    "stamp":  "20261122T190410Z",
+    "overall":  "PASS",
+    "live_sha256_before":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_sha256_after":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_unchanged":  true,
+    "frontend_copy":  "C:\\FrontierAtlas-test\\fe-build-20261122T190410Z",
+    "steps":  {
+                  "backend_pytest":  {
+                                         "exit_code":  0,
+                                         "seconds":  44,
+                                         "result":  "PASS"
+                                     },
+                  "backend_ruff":  {
+                                       "exit_code":  0,
+                                       "seconds":  0.2,
+                                       "result":  "PASS"
+                                   },
+                  "migration_test_pre7b_backup_copy":  {
+                                                           "exit_code":  0,
+                                                           "seconds":  3.5,
+                                                           "result":  "PASS"
+                                                       },
+                  "migration_post7b_schema_on_copy":  {
+                                                          "exit_code":  0,
+                                                          "seconds":  1,
+                                                          "result":  "PASS"
+                                                      },
+                  "frontend_typecheck":  {
+                                             "exit_code":  0,
+                                             "seconds":  7.5,
+                                             "result":  "PASS"
+                                         },
+                  "frontend_eslint":  {
+                                          "exit_code":  0,
+                                          "seconds":  22.6,
+                                          "result":  "PASS"
+                                      },
+                  "frontend_production_build":  {
+                                                    "exit_code":  0,
+                                                    "seconds":  19.1,
+                                                    "result":  "PASS"
+                                                }
+              }
+}

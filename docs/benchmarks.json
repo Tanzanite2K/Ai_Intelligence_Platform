@@ -1,0 +1,55 @@
+{
+  "label": "SYNTHETIC BENCHMARK FIXTURES \u2014 not real collected data",
+  "database": "localhost:5433/aip_bench",
+  "run_at": "2026-11-21T09:01:21.365637+00:00",
+  "python": "3.13.18",
+  "cpu_count": 2,
+  "storage_bulk_upsert": {
+    "records": 100000,
+    "insert_seconds": 27.47,
+    "insert_rows_per_s": 3640,
+    "idempotent_rerun_seconds": 24.57,
+    "rerun_inserted": 0,
+    "first_inserted": 100000
+  },
+  "crawl_pipeline_local_http": {
+    "boards": 400,
+    "jobs_fetched": 40000,
+    "fresh_stored": 19960,
+    "stale_rejected": 20040,
+    "seconds": 17.11,
+    "jobs_per_s": 2338,
+    "simulated_latency_ms": 50,
+    "concurrent_workers": 8
+  },
+  "llm_orchestrator_fault_injection": {
+    "extractions": 2000,
+    "succeeded": 2000,
+    "failed": 0,
+    "success_rate": 1.0,
+    "seconds": 3.43,
+    "extractions_per_s": 582.9,
+    "p50_s": 1.579,
+    "p95_s": 2.644,
+    "fault_injection": {
+      "gemini": "25% 429, 5% 413, 5% 5xx",
+      "groq": "10% 429, 10% 413, 2% 5xx",
+      "deepseek": "2% 429, 1% 5xx"
+    },
+    "final_provider_counts": {
+      "gemini": 1975,
+      "groq": 25
+    },
+    "attempt_outcomes": {
+      "gemini:413": 151,
+      "gemini:429": 783,
+      "gemini:ok": 2122,
+      "gemini:unavailable": 198,
+      "groq:413": 3,
+      "groq:429": 5,
+      "groq:ok": 28,
+      "groq:unavailable": 5
+    }
+  },
+  "peak_rss_mb": 608.4
+}

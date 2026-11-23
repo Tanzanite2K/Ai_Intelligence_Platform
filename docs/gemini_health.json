@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model": "gemini-3.1-flash-lite",
+    "api_version": "v1beta",
+    "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent",
+    "timeout_s": 60.0,
+    "thinking_budget": 0,
+    "input_token_budget": 24000,
+    "max_attempts_transient": 4
+  },
+  "minimal_generation": {
+    "ok": true,
+    "attempts": [
+      {
+        "outcome": "transient:ProviderTimeoutError",
+        "error": "gemini timeout after 60.0s",
+        "retry_in_s": 0.58
+      },
+      {
+        "outcome": "ok",
+        "seconds": 1.85
+      }
+    ],
+    "input_tokens": 13,
+    "output_tokens": 5,
+    "thinking_budget_sent": 0
+  },
+  "extraction": {
+    "ok": true,
+    "path": "LLMOrchestrator+GeminiProvider+PRODUCT_PRICING+validators",
+    "accepted": {
+      "pricing_model": "FREEMIUM"
+    },
+    "evidence": {
+      "pricing_model": "Atlas is free to start; upgrade to the Pro plan for $20/month."
+    },
+    "status": "VERIFIED",
+    "confidence": 1.0,
+    "attempts": [
+      "gemini:ok"
+    ]
+  },
+  "healthy": true,
+  "api_calls": 3,
+  "category": "AUTHENTICATED"
+}

@@ -1,0 +1,40 @@
+﻿{
+    "stamp":  "20261122T183120Z",
+    "overall":  "FAIL",
+    "live_sha256_before":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_sha256_after":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_unchanged":  true,
+    "frontend_copy":  "C:\\FrontierAtlas-test\\fe-build-20261122T183120Z",
+    "steps":  {
+                  "backend_pytest":  {
+                                         "exit_code":  0,
+                                         "seconds":  47.5,
+                                         "result":  "PASS"
+                                     },
+                  "backend_ruff":  {
+                                       "exit_code":  0,
+                                       "seconds":  0.2,
+                                       "result":  "PASS"
+                                   },
+                  "migration_test_on_copies":  {
+                                                   "exit_code":  1,
+                                                   "seconds":  3.8,
+                                                   "result":  "FAIL"
+                                               },
+                  "frontend_typecheck":  {
+                                             "exit_code":  0,
+                                             "seconds":  7.8,
+                                             "result":  "PASS"
+                                         },
+                  "frontend_eslint":  {
+                                          "exit_code":  0,
+                                          "seconds":  21.3,
+                                          "result":  "PASS"
+                                      },
+                  "frontend_production_build":  {
+                                                    "exit_code":  0,
+                                                    "seconds":  18.2,
+                                                    "result":  "PASS"
+                                                }
+              }
+}

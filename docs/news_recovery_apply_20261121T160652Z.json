@@ -1,0 +1,895 @@
+{
+  "run_at": "2026-11-21T16:06:52Z",
+  "mode": "apply",
+  "database": "data\\platform.db",
+  "config": {
+    "gemini_model": "gemini-3.1-flash-lite",
+    "providers_order": [
+      "gemini",
+      "groq",
+      "deepseek"
+    ],
+    "providers_configured": [
+      "gemini"
+    ],
+    "retries_per_provider": 5,
+    "backoff_s": [
+      2.0,
+      30.0
+    ]
+  },
+  "scope": {
+    "dead_letters": 16,
+    "distinct_keys": 16,
+    "already_tagged": [],
+    "missing_records": [],
+    "no_text": [],
+    "untagged_news_total": 16,
+    "untagged_news_not_dead_lettered": [],
+    "news_total": 16,
+    "targets": 16
+  },
+  "targets": [
+    {
+      "url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+      "title": "The most misunderstood graph in AI just got a major update"
+    },
+    {
+      "url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "title": "Trump threatens \u2018tremendous tax\u2019 for moving AI data centers outside the US"
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+      "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude"
+    },
+    {
+      "url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
+      "title": "The week everything fell apart"
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+      "title": "Signal is blocking Gemini and Siri AI from reading your screen"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
+      "title": "Daniel Ek backs AI researcher\u2019s fusion power startup. Here\u2019s what they\u2019re building."
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too",
+      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis \u2014 and a human did, too"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing",
+      "title": "Chips can survive the space environment \u2014 can their financing?"
+    },
+    {
+      "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues",
+      "title": "The fallout from Nvidia\u2019s Jensen Huang scandal continues"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter",
+      "title": "Six AI-powered gadgets that could make your home office smarter"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar",
+      "title": "Google rolls out new search homepage with AI chat history and no search button"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers"
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced."
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models",
+      "title": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index"
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model",
+      "title": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only"
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model",
+      "title": "NVIDIA AI Releases Nemotron-Labs-Sigma, a Continuous Diffusion Language Model with 14 checkpoints at 3B/8B"
+    }
+  ],
+  "resolver_replay": {
+    "STARTUP": {
+      "records": 2509,
+      "would_rename": 0
+    },
+    "PRODUCT": {
+      "records": 1800,
+      "would_rename": 0
+    },
+    "JOB": {
+      "records": 93,
+      "would_rename": 0
+    }
+  },
+  "written": {
+    "news_records": 15,
+    "mappings_attempted": 52
+  },
+  "results": [
+    {
+      "url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+      "title": "The most misunderstood graph in AI just got a major update",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "METR",
+        "Anthropic",
+        "UC Berkeley",
+        "OpenAI",
+        "Boston University"
+      ],
+      "extracted": [
+        "METR",
+        "Anthropic",
+        "UC Berkeley",
+        "OpenAI",
+        "Boston University"
+      ],
+      "evidence": "A new report from the AI evaluation nonprofit METR finds | AI progress at Anthropic by a factor of two | incoming professor at UC Berkeley | in a Wednesday blog post, OpenAI reported | linguist and computer scientist at Boston University",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "title": "Trump threatens \u2018tremendous tax\u2019 for moving AI data centers outside the US",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Anthropic",
+        "Google",
+        "Uber"
+      ],
+      "extracted": [
+        "Anthropic",
+        "Google",
+        "Uber"
+      ],
+      "evidence": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude | Google says it\u2019s going to shut off Google Assistant on smart speakers next year | Why the robots are ditching Uber",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+      "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "extracted": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "evidence": "Anthropic mathematician Levent Alp\u00f6ge claims he has proved the Riemann hypothesis | and add to theupheaval already unleashed by OpenAI\u2019s previous, often inelegant foraysinto the field.",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
+      "title": "The week everything fell apart",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Anthropic",
+        "Google"
+      ],
+      "extracted": [
+        "Anthropic",
+        "Google"
+      ],
+      "evidence": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude | Google says it\u2019s going to shut off Google Assistant on smart speakers next year",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+      "title": "Signal is blocking Gemini and Siri AI from reading your screen",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Signal",
+        "Google",
+        "Apple",
+        "Microsoft",
+        "Meta",
+        "Anthropic"
+      ],
+      "extracted": [
+        "Signal",
+        "Google",
+        "Apple",
+        "Microsoft",
+        "Meta",
+        "Anthropic"
+      ],
+      "evidence": "Signal is blocking Gemini and Siri AI from reading your screen | Google, Apple, Microsoft, and others do not provide ways for developers to easily restrict such AI data access | Google, Apple, Microsoft, and others do not provide ways for developers to easily restrict such AI data access | Google, Apple, Microsoft, and others do not provide ways for developers to easily restrict such AI data access | Signal also says more tools are needed to prevent third-party agents, likeMeta\u2019s Muse | Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
+      "title": "Daniel Ek backs AI researcher\u2019s fusion power startup. Here\u2019s what they\u2019re building.",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Google DeepMind",
+        "Microsoft Research Cambridge"
+      ],
+      "extracted": [
+        "Google DeepMind",
+        "Microsoft Research Cambridge"
+      ],
+      "evidence": "having previously worked at Google DeepMind | and Microsoft Research Cambridge.",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too",
+      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis \u2014 and a human did, too",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Anthropic"
+      ],
+      "extracted": [
+        "Anthropic"
+      ],
+      "evidence": "The mathematician saw his employer, Anthropic, become the first publicly traded frontier AI lab.",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing",
+      "title": "Chips can survive the space environment \u2014 can their financing?",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "SpaceX",
+        "Starcloud",
+        "Google",
+        "Tesla",
+        "Terafab"
+      ],
+      "extracted": [
+        "SpaceX",
+        "StarCloud",
+        "Google",
+        "Tesla",
+        "Terafab"
+      ],
+      "evidence": "lenders behind SpaceX\u2019s $40 billion chip financing deal | startups like StarCloud | That might be an advantage for Google | SpaceX and Tesla are working together | build their own chip foundry, Terafab",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues",
+      "title": "The fallout from Nvidia\u2019s Jensen Huang scandal continues",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "NVIDIA",
+        "Anthropic",
+        "Toyota",
+        "Waymo",
+        "Tesla",
+        "Our Next Energy"
+      ],
+      "extracted": [
+        "Nvidia",
+        "Anthropic",
+        "Toyota",
+        "Waymo",
+        "Tesla",
+        "Our Next Energy"
+      ],
+      "evidence": "Nvidia delivered its latest earnings report this week | especially as Anthropic goes public | How Toyota is betting on a future beyond cars | Waymo\u2019s decision tosuspend freeway rides nationally | Teslamaking the Cybercab available for personal orders | Battery startup Our Next Energy going public",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter",
+      "title": "Six AI-powered gadgets that could make your home office smarter",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Anker",
+        "Logitech",
+        "GitHub",
+        "OpenAI",
+        "Microsoft",
+        "Amazon",
+        "Insta360",
+        "Autonomous"
+      ],
+      "extracted": [
+        "Anker",
+        "Logitech",
+        "GitHub",
+        "OpenAI",
+        "Microsoft",
+        "Amazon",
+        "Insta360",
+        "Autonomous"
+      ],
+      "evidence": "Anker\u2019s AI-powered recording pin | Logitech\u2019sMX Keypadbrings AI shortcuts | tools such as GitHub Copilot | such as OpenAI Codex | Microsoft Teams | Amazon\u2019sKindle Scribe Colorsoft | Insta360\u2019sLink 2 Pro | Autonomous Desk Prois an adjustable standing desk",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Google"
+      ],
+      "extracted": [
+        "Google"
+      ],
+      "evidence": "Google rolls out new search homepage with AI chat history and no search button",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Meta"
+      ],
+      "extracted": [
+        "Meta"
+      ],
+      "evidence": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "no_validated_organisations",
+      "reason": "possible hallucination - no item independently supported by its own verbatim quote: {'OpenRouter': 'its quote is not verbatim in the source (fabricated or paraphrased)', 'Vercel': 'its quote is not verbatim in the source (fabricated or paraphrased)', 'Anthropic': 'its quote is not verbatim in the source (fabricated or paraphrased)', 'OpenAI': 'its quote is not verbatim in the source (fabricated or paraphrased)', 'Amazon Web Services': 'its quote is not verbatim in the source (fabricated or paraphrased)'}"
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models",
+      "title": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index",
+      "attempts": [
+        "gemini:unavailable",
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "Baseten",
+        "Google",
+        "Liquid AI",
+        "Hugging Face"
+      ],
+      "extracted": [
+        "Baseten",
+        "Google",
+        "Liquid AI",
+        "Hugging Face"
+      ],
+      "evidence": "Baseten has released bison-1 and groundhog-1 | built on Google\u2019s Gemma 4 | 1 point above Liquid AI\u2019s d1.2-ultra | plus open BF16 weights on Hugging Face",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model",
+      "title": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "RadixArk",
+        "Eigent AI",
+        "Alibaba Qwen",
+        "Alibaba"
+      ],
+      "extracted": [
+        "RadixArk",
+        "Eigent AI",
+        "Qwen",
+        "Alibaba"
+      ],
+      "evidence": "RadixArk released | RadixArk built about 1,200 curated tasks with Eigent AI | Qwen (Alibaba) | Qwen (Alibaba)",
+      "providers": [
+        "gemini"
+      ]
+    },
+    {
+      "url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model",
+      "title": "NVIDIA AI Releases Nemotron-Labs-Sigma, a Continuous Diffusion Language Model with 14 checkpoints at 3B/8B",
+      "attempts": [
+        "gemini:ok"
+      ],
+      "outcome": "tagged",
+      "organizations": [
+        "NVIDIA",
+        "Hugging Face"
+      ],
+      "extracted": [
+        "NVIDIA",
+        "Hugging Face"
+      ],
+      "evidence": "NVIDIA has released | All 14 checkpoints are on Hugging Face",
+      "providers": [
+        "gemini"
+      ]
+    }
+  ],
+  "summary": {
+    "tagged": 15,
+    "no_validated_organisations": 1,
+    "failed": 0
+  },
+  "mappings": [
+    {
+      "original_name": "METR",
+      "canonical_name": "METR",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "UC Berkeley",
+      "canonical_name": "UC Berkeley",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Boston University",
+      "canonical_name": "Boston University",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Uber",
+      "canonical_name": "Uber",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast"
+    },
+    {
+      "original_name": "Signal",
+      "canonical_name": "Signal",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Apple",
+      "canonical_name": "Apple",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Microsoft",
+      "canonical_name": "Microsoft",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Meta",
+      "canonical_name": "Meta",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Google DeepMind",
+      "canonical_name": "Google DeepMind",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building"
+    },
+    {
+      "original_name": "Microsoft Research Cambridge",
+      "canonical_name": "Microsoft Research Cambridge",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too"
+    },
+    {
+      "original_name": "SpaceX",
+      "canonical_name": "SpaceX",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "StarCloud",
+      "canonical_name": "Starcloud",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Tesla",
+      "canonical_name": "Tesla",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Terafab",
+      "canonical_name": "Terafab",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Nvidia",
+      "canonical_name": "NVIDIA",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Toyota",
+      "canonical_name": "Toyota",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Waymo",
+      "canonical_name": "Waymo",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Tesla",
+      "canonical_name": "Tesla",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Our Next Energy",
+      "canonical_name": "Our Next Energy",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Anker",
+      "canonical_name": "Anker",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Logitech",
+      "canonical_name": "Logitech",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "GitHub",
+      "canonical_name": "GitHub",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Microsoft",
+      "canonical_name": "Microsoft",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Amazon",
+      "canonical_name": "Amazon",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Insta360",
+      "canonical_name": "Insta360",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Autonomous",
+      "canonical_name": "Autonomous",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar"
+    },
+    {
+      "original_name": "Meta",
+      "canonical_name": "Meta",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers"
+    },
+    {
+      "original_name": "Baseten",
+      "canonical_name": "Baseten",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Liquid AI",
+      "canonical_name": "Liquid AI",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Hugging Face",
+      "canonical_name": "Hugging Face",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "RadixArk",
+      "canonical_name": "RadixArk",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Eigent AI",
+      "canonical_name": "Eigent AI",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Qwen",
+      "canonical_name": "Alibaba Qwen",
+      "method": "ALIAS",
+      "confidence": 0.99,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Alibaba",
+      "canonical_name": "Alibaba",
+      "method": "NEW",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "NVIDIA",
+      "canonical_name": "NVIDIA",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model"
+    },
+    {
+      "original_name": "Hugging Face",
+      "canonical_name": "Hugging Face",
+      "method": "EXACT",
+      "confidence": 1.0,
+      "needs_review": false,
+      "source_url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model"
+    }
+  ]
+}

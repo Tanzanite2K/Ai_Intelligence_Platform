@@ -1,0 +1,13 @@
+.venv
+data
+.git
+__pycache__
+.pytest_cache
+.env
+.env.*
+!.env.example
+credentials
+*.json.key
+service-account*.json
+docs/final_run.log
+*.tar.gz

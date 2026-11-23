@@ -1,0 +1,83 @@
+{
+  "stamp": "20261123T080621Z",
+  "production_writes": "none",
+  "production": {
+    "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "bytes": 41025536,
+    "revision": "0002_history_tables",
+    "integrity": "ok",
+    "fk_violations": 0,
+    "row_counts": {
+      "alembic_version": 1,
+      "canonical_entities": 62,
+      "catalogue_scans": 0,
+      "claims": 0,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entities": 0,
+      "entity_mappings": 4944,
+      "entity_resolution_events": 0,
+      "evidence_links": 0,
+      "ingestion_batches": 1,
+      "metric_snapshots": 0,
+      "presence_events": 0,
+      "record_observations": 6708,
+      "record_versions": 6708,
+      "records": 6708,
+      "seen_items": 0,
+      "source_groups": 0,
+      "source_reliability_daily": 0,
+      "source_runs": 42
+    },
+    "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+    "equals_expected_post_7b": true,
+    "side_files": []
+  },
+  "backup": {
+    "dir": "C:\\FrontierAtlas-backups\\activation-20261123T074453Z",
+    "outside_onedrive": true,
+    "cold": {
+      "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "matches_SHA256SUMS": true,
+      "equals_production": true,
+      "integrity": "ok",
+      "fk_violations": 0
+    },
+    "online": {
+      "sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+      "matches_SHA256SUMS": true,
+      "integrity": "ok",
+      "fk_violations": 0,
+      "row_counts_equal_production": true,
+      "revision": "0002_history_tables"
+    },
+    "ok": true
+  },
+  "rollback_rehearsal": {
+    "target": "C:\\FrontierAtlas-test\\rollback-20261123T080621Z\\platform.db",
+    "simulated_write": "sync-evidence",
+    "simulated_write_exit": 0,
+    "target_changed": true,
+    "rows_added_by_simulation": {
+      "claims": 8642,
+      "entities": 2580,
+      "entity_resolution_events": 4937,
+      "evidence_links": 8697
+    },
+    "restore": {
+      "ok": true,
+      "from": "C:\\FrontierAtlas-backups\\activation-20261123T074453Z\\platform.pre-activation.cold.db",
+      "to": "C:\\FrontierAtlas-test\\rollback-20261123T080621Z\\platform.db",
+      "previous_file_kept_as": "C:\\FrontierAtlas-test\\rollback-20261123T080621Z\\platform.failed-20261123T080630Z.db",
+      "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "expected_sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "integrity": "ok"
+    },
+    "restored_equals_backup": true,
+    "live_refused_without_allow_live": true,
+    "live_refusal_message": "Refusing to restore over the live database C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db without --allow-live (Run B approval).",
+    "ok": true
+  },
+  "production_unchanged_during_check": true,
+  "result": "PASS"
+}

@@ -1,0 +1,701 @@
+{
+  "report": "phase7a_migration_test",
+  "stamp": "20261122T184526Z",
+  "result": "PASS",
+  "passed": 16,
+  "total": 16,
+  "source": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+  "workdir": "C:\\FrontierAtlas-test",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Pre-flight: work folder outside OneDrive and project; record live database checksum",
+      "ok": true,
+      "details": {
+        "live_database": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493903763500
+        },
+        "workdir": "C:\\FrontierAtlas-test\\phase7a-20261122T184526Z",
+        "python": "3.13.12",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "sqlite": "3.50.4",
+        "sqlalchemy": "2.0.41",
+        "alembic": "1.20.1",
+        "live_opened": "read-only (mode=ro), SQLite online backup API only"
+      },
+      "seconds": 0.619
+    },
+    {
+      "step": 2,
+      "name": "Verified backup of the live database (online backup API)",
+      "ok": true,
+      "details": {
+        "backup": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T184526Z\\backup_pre_migration.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795373126835821400
+        },
+        "source_integrity": "ok",
+        "backup_integrity": "ok",
+        "row_counts": {
+          "canonical_entities": 62,
+          "crawl_checkpoints": 18,
+          "dead_letters": 16,
+          "entity_mappings": 4944,
+          "records": 6708,
+          "seen_items": 0,
+          "source_runs": 42
+        }
+      },
+      "seconds": 0.198
+    },
+    {
+      "step": 3,
+      "name": "Working copy identical to the backup; baseline fingerprint of the 7 existing tables",
+      "ok": true,
+      "details": {
+        "work_copy": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T184526Z\\work.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795373126835821400
+        },
+        "tables": [
+          "canonical_entities",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entity_mappings",
+          "records",
+          "seen_items",
+          "source_runs"
+        ],
+        "fingerprint": {
+          "canonical_entities": {
+            "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+            "index_ddl": [
+              "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+            ],
+            "rows": 62,
+            "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+          },
+          "crawl_checkpoints": {
+            "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+            "index_ddl": [],
+            "rows": 18,
+            "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+          },
+          "dead_letters": {
+            "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+            "index_ddl": [
+              "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+            ],
+            "rows": 16,
+            "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+          },
+          "entity_mappings": {
+            "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+            "index_ddl": [
+              "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+            ],
+            "rows": 4944,
+            "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+          },
+          "records": {
+            "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+            "index_ddl": [
+              "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+              "CREATE INDEX ix_records_source ON records (source_name)",
+              "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+              "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+            ],
+            "rows": 6708,
+            "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+          },
+          "seen_items": {
+            "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+            "index_ddl": [
+              "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+            ],
+            "rows": 0,
+            "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+          },
+          "source_runs": {
+            "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+            "index_ddl": [
+              "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+            ],
+            "rows": 42,
+            "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+          }
+        }
+      },
+      "seconds": 0.122
+    },
+    {
+      "step": 4,
+      "name": "Schema check: revision 0001 DDL == existing DDL, and ORM models == existing schema",
+      "ok": true,
+      "details": {
+        "ddl_differences": {},
+        "orm_vs_existing_differences": [],
+        "fresh_db_revision": "0001_baseline",
+        "tables_compared": [
+          "canonical_entities",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entity_mappings",
+          "records",
+          "seen_items",
+          "source_runs"
+        ]
+      },
+      "seconds": 0.29
+    },
+    {
+      "step": 5,
+      "name": "Safety: 'upgrade 0001' on the existing database is refused (tables exist)",
+      "ok": true,
+      "details": {
+        "refused": true,
+        "message": "Baseline tables already exist (canonical_entities, crawl_checkpoints, dead_letters, entity_mappings, records, seen_items, source_runs). This is an existing FrontierAtlas database: verify its schema and run `alembic stamp 0001_baseline` instead of upgrading.",
+        "existing_tables_unchanged": true,
+        "diff": []
+      },
+      "seconds": 0.122
+    },
+    {
+      "step": 6,
+      "name": "stamp 0001_baseline on the existing copy",
+      "ok": true,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 0,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": []
+      },
+      "seconds": 0.237
+    },
+    {
+      "step": 7,
+      "name": "upgrade head (0002_history_tables): 12 new empty tables, existing tables unchanged",
+      "ok": true,
+      "details": {
+        "revision": "0002_history_tables",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": [],
+        "history_tables": {
+          "catalogue_scans": 1,
+          "claims": 2,
+          "entities": 3,
+          "entity_resolution_events": 3,
+          "evidence_links": 2,
+          "ingestion_batches": 1,
+          "metric_snapshots": 2,
+          "presence_events": 2,
+          "record_observations": 3,
+          "record_versions": 2,
+          "source_groups": 1,
+          "source_reliability_daily": 1
+        },
+        "history_ddl_sha256": "37ba95b6ea562b2fdbba5dfa86fe7e85da1a33a00e4f8c2d7b2fee831b3943a7"
+      },
+      "seconds": 0.356
+    },
+    {
+      "step": 8,
+      "name": "upgrade head again is a no-op (idempotent)",
+      "ok": true,
+      "details": {
+        "revision": "0002_history_tables",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": [],
+        "file_unchanged_by_noop_upgrade": true
+      },
+      "seconds": 0.311
+    },
+    {
+      "step": 9,
+      "name": "Constraint probes on a throw-away copy (idempotency, disappearance, corroboration, versions)",
+      "ok": true,
+      "details": {
+        "cases": [
+          {
+            "case": "batch: first daily slot",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "batch: same trigger + slot again (retry must resume, not duplicate)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: ingestion_batches.trigger, ingestion_batches.scheduled_for",
+            "ok": true
+          },
+          {
+            "case": "batch: second batch, other slot",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "observation: first",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "observation: retry with ON CONFLICT DO NOTHING writes nothing",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "record_observations rows=1",
+            "ok": true
+          },
+          {
+            "case": "observation: duplicate without ON CONFLICT is refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_observations.batch_id, record_observations.source_name, record_observations.record_type, record_observations.dedup_hash",
+            "ok": true
+          },
+          {
+            "case": "observation: same item in another batch is a new observation",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "record_observations rows=2",
+            "ok": true
+          },
+          {
+            "case": "observation: unknown origin refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_observations_origin",
+            "ok": true
+          },
+          {
+            "case": "observation: unknown batch refused (foreign key)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "FOREIGN KEY constraint failed",
+            "ok": true
+          },
+          {
+            "case": "observation: baseline_backfill origin accepted",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: v1 open",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: second open version for the same record refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash",
+            "ok": true
+          },
+          {
+            "case": "version: v2 open after v1 closed",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: duplicate version number refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash, record_versions.version_no",
+            "ok": true
+          },
+          {
+            "case": "version: same content in the same batch refused (retry)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash, record_versions.content_hash, record_versions.batch_id",
+            "ok": true
+          },
+          {
+            "case": "version: unknown origin refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_versions_origin",
+            "ok": true
+          },
+          {
+            "case": "version: valid_to before valid_from refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_versions_interval",
+            "ok": true
+          },
+          {
+            "case": "metric: first sample",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "metric: same subject/metric/source/batch refused (retry)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: metric_snapshots.subject_kind, metric_snapshots.subject_key, metric_snapshots.metric, metric_snapshots.source_name, metric_snapshots.batch_id",
+            "ok": true
+          },
+          {
+            "case": "metric: next batch accepted",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: complete scan with a reason refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_catalogue_scans_reason",
+            "ok": true
+          },
+          {
+            "case": "scan: incomplete scan with reason",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: complete scan",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: second scan of a source in one batch refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: catalogue_scans.batch_id, catalogue_scans.source_name",
+            "ok": true
+          },
+          {
+            "case": "presence: disappeared without a catalogue scan refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_presence_events_disappear_needs_scan",
+            "ok": true
+          },
+          {
+            "case": "presence: disappeared with a scan",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "presence: duplicate event in the same batch refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: presence_events.source_name, presence_events.record_type, presence_events.dedup_hash, presence_events.batch_id, presence_events.event",
+            "ok": true
+          },
+          {
+            "case": "presence: unknown event refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_presence_events_event",
+            "ok": true
+          },
+          {
+            "case": "entity: first active",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "entity: second active with the same key refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: entities.normalized_key",
+            "ok": true
+          },
+          {
+            "case": "entity: merged without a target refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_entities_merge_target",
+            "ok": true
+          },
+          {
+            "case": "entity: merged with a target (same key allowed when merged)",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "resolution: open decision",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "resolution: second open decision for the same name+source refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: entity_resolution_events.raw_name, entity_resolution_events.source_url",
+            "ok": true
+          },
+          {
+            "case": "resolution: new decision after supersede",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "claim: corroborated with one source group refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_claims_corroborated_needs_two_groups",
+            "ok": true
+          },
+          {
+            "case": "claim: single source",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "claim: same statement twice refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: claims.claim_kind, claims.subject_entity_id, claims.predicate, claims.object_key, claims.value",
+            "ok": true
+          },
+          {
+            "case": "evidence: link to an existing record version",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "evidence: same version twice for one claim refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: evidence_links.claim_id, evidence_links.record_type, evidence_links.dedup_hash, evidence_links.version_no",
+            "ok": true
+          },
+          {
+            "case": "evidence: link to a missing record version refused (foreign key)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "FOREIGN KEY constraint failed",
+            "ok": true
+          },
+          {
+            "case": "evidence: empty snippet refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_evidence_links_snippet",
+            "ok": true
+          },
+          {
+            "case": "reliability: ok_runs above runs refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_source_reliability_ok_runs",
+            "ok": true
+          },
+          {
+            "case": "reliability: one row per source and day",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "reliability: second row for the same day refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: source_reliability_daily.source, source_reliability_daily.day",
+            "ok": true
+          }
+        ],
+        "passed": 45,
+        "total": 45,
+        "foreign_key_violations": [],
+        "existing_tables_unchanged_on_probe": true,
+        "probe_copy_deleted": true
+      },
+      "seconds": 0.252
+    },
+    {
+      "step": 10,
+      "name": "downgrade 0001_baseline: history tables removed, existing tables unchanged",
+      "ok": true,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 0,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": []
+      },
+      "seconds": 0.269
+    },
+    {
+      "step": 11,
+      "name": "Safety: 'downgrade base' (would drop production tables) is refused",
+      "ok": true,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 0,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": [],
+        "refused": true,
+        "message": "0001_baseline cannot be downgraded: it would drop the production tables and all their data. To undo everything after the baseline, run `alembic downgrade 0001_baseline`; to roll back a database completely, restore its pre-migration backup."
+      },
+      "seconds": 0.288
+    },
+    {
+      "step": 12,
+      "name": "Re-upgrade head: identical history schema, existing tables unchanged",
+      "ok": true,
+      "details": {
+        "revision": "0002_history_tables",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": [],
+        "history_ddl_identical_to_first_upgrade": true
+      },
+      "seconds": 0.573
+    },
+    {
+      "step": 13,
+      "name": "Safety: Alembic refuses to run against the live data/platform.db without explicit approval",
+      "ok": true,
+      "details": {
+        "skipped": true,
+        "reason": "source is not the project's live database path"
+      },
+      "seconds": 0.001
+    },
+    {
+      "step": 14,
+      "name": "Backup restore to a new file: integrity ok, identical to the original",
+      "ok": true,
+      "details": {
+        "backup_sha256_still_matches": true,
+        "restored": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T184526Z\\restored_from_backup.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795373129937497400
+        },
+        "integrity": "ok",
+        "matches_original": true,
+        "diff": [],
+        "tables": [
+          "canonical_entities",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entity_mappings",
+          "records",
+          "seen_items",
+          "source_runs"
+        ],
+        "revision": null
+      },
+      "seconds": 0.572
+    },
+    {
+      "step": 15,
+      "name": "Rollback by restore: pre-migration backup restored over a migrated copy",
+      "ok": true,
+      "details": {
+        "before_restore": {
+          "revision": "0002_history_tables",
+          "tables": 20
+        },
+        "after_restore": {
+          "revision": null,
+          "tables": [
+            "canonical_entities",
+            "crawl_checkpoints",
+            "dead_letters",
+            "entity_mappings",
+            "records",
+            "seen_items",
+            "source_runs"
+          ],
+          "integrity": "ok"
+        },
+        "matches_original": true,
+        "diff": [],
+        "file": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T184526Z\\rollback_target.db",
+          "sha256": "49ba24c92aad17ddaba71681f5b2b56b6c823271f17b5d680a71cb89264327de",
+          "bytes": 19185664,
+          "mtime_ns": 1795373130631037200
+        }
+      },
+      "seconds": 0.686
+    },
+    {
+      "step": 16,
+      "name": "Live database unchanged (SHA-256, size, modification time)",
+      "ok": true,
+      "details": {
+        "start": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493903763500
+        },
+        "end": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493903763500
+        }
+      },
+      "seconds": 0.025
+    }
+  ]
+}

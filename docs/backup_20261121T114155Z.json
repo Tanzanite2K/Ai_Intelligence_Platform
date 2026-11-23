@@ -1,0 +1,19 @@
+{
+  "backup": "data\\platform.backup-20261121T114155Z.db",
+  "sha256": "90113e70477037928fb9ee5bac92f6af643322716a8a6c59dc8be9570c8eb8bd",
+  "bytes": 19173376,
+  "source_integrity": "ok",
+  "backup_integrity": "ok",
+  "row_counts": {
+    "canonical_entities": 62,
+    "crawl_checkpoints": 18,
+    "dead_letters": 16,
+    "entity_mappings": 4892,
+    "records": 6708,
+    "seen_items": 0,
+    "source_runs": 42
+  },
+  "counts_match": true,
+  "ok": true,
+  "created_at": "20261121T114155Z"
+}

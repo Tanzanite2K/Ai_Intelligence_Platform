@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-22T10:11:56.135086+00:00",
+  "database_written": false,
+  "sources": {
+    "venturebeat_ai": {
+      "verdict": "ERROR",
+      "detail": "TypeError: result() got multiple values for argument 'status'"
+    },
+    "producthunt": {
+      "verdict": "CREDENTIAL REQUIRED",
+      "http_status": 401,
+      "detail": "Product Hunt rejected PRODUCTHUNT_TOKEN (HTTP 401, error code: invalid_oauth_token - Please supply a valid access token. Refer to our api documentation about how to authorize an api request. Please also make sure you require the correct scopes. ); action required: create/open your app at https://api.producthunt.com/v2/oauth/applications and put its Developer Token (not the API Key or API Secret) in PRODUCTHUNT_TOKEN; see docs/SOURCE_HEALTH.md",
+      "token_length": 43
+    },
+    "the_decoder": {
+      "verdict": "ERROR",
+      "detail": "SourceBlockedError: access denied HTTP 403"
+    },
+    "arstechnica_ai": {
+      "verdict": "ERROR",
+      "detail": "TypeError: result() got multiple values for argument 'status'"
+    },
+    "research_papers": {
+      "verdict": "PASS",
+      "token_configured": true,
+      "authenticated": true,
+      "limit_per_hour": 5000,
+      "remaining": 4999,
+      "resets_at": "2026-11-22T11:08:49+00:00",
+      "probe_repo": {
+        "repo": "huggingface/transformers",
+        "stars": 169351
+      }
+    },
+    "yc_startups": {
+      "verdict": "PASS",
+      "endpoints": [
+        {
+          "url": "https://yc-oss.github.io/api/tags/artificial-intelligence.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/generative-ai.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/machine-learning.json",
+          "status": 200
+        },
+        {
+          "url": "https://yc-oss.github.io/api/tags/ai.json",
+          "status": 200
+        }
+      ],
+      "parsed_sample": [
+        "Directed Edge",
+        "JustSpotted",
+        "Canopy Labs",
+        "Semantics3",
+        "Casetext"
+      ],
+      "parser_status": "OK",
+      "errors": []
+    }
+  }
+}

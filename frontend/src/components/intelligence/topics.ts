@@ -1,0 +1,23 @@
+/** Topic ids/labels mirror src/intelligence/topics.py (GET /api/v1/intelligence/topics-catalog). */
+export const TOPIC_OPTIONS: { value: string; label: string }[] = [
+  { value: "llm", label: "Large language models" },
+  { value: "agents", label: "AI agents" },
+  { value: "retrieval", label: "Retrieval, RAG & embeddings" },
+  { value: "multimodal", label: "Multimodal & vision-language" },
+  { value: "generative_media", label: "Image & video generation" },
+  { value: "vision", label: "Computer vision" },
+  { value: "speech_audio", label: "Speech & audio" },
+  { value: "robotics", label: "Robotics & embodied AI" },
+  { value: "reinforcement_learning", label: "Reinforcement learning" },
+  { value: "reasoning", label: "Reasoning & math" },
+  { value: "code", label: "Code generation & developer tools" },
+  { value: "safety", label: "AI safety, alignment & trust" },
+  { value: "efficiency", label: "Efficient training & inference" },
+  { value: "infrastructure", label: "AI infrastructure & compute" },
+  { value: "health_bio", label: "Healthcare & life sciences" },
+  { value: "finance", label: "Finance & fintech" },
+  { value: "open_models", label: "Open-source & open-weight models" },
+  { value: "evaluation", label: "New benchmarks & datasets" },
+  { value: "autonomy", label: "Autonomous vehicles & drones" },
+  { value: "security", label: "AI & cybersecurity" },
+];

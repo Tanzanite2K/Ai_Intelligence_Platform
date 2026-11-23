@@ -1,0 +1,129 @@
+{
+  "stamp": "20261123T090558Z",
+  "authorized": "user, 2026-11-23 14:34 IST",
+  "production_sha256_before": "c153831df1ca7651ad1f98a10a76e01243748f5f02c4f3ae374ef375eda59c6c",
+  "service_account_file_present": true,
+  "sheet_id_configured": true,
+  "expected_from_database": {
+    "Startups": {
+      "rows": 2509,
+      "key": "source.url",
+      "duplicate_keys": 0,
+      "empty_keys": 0
+    },
+    "Products": {
+      "rows": 1800,
+      "key": "source.url",
+      "duplicate_keys": 0,
+      "empty_keys": 0
+    },
+    "Research Papers": {
+      "rows": 2290,
+      "key": "content.paper_url",
+      "duplicate_keys": 0,
+      "empty_keys": 0
+    },
+    "Jobs": {
+      "rows": 54,
+      "key": "content.job_url",
+      "duplicate_keys": 0,
+      "empty_keys": 0
+    },
+    "News": {
+      "rows": 6,
+      "key": "content.article_url",
+      "duplicate_keys": 0,
+      "empty_keys": 0
+    },
+    "Entity Mapping Log": {
+      "rows": 4997
+    }
+  },
+  "export_exit": 0,
+  "export_result": {
+    "rows": {
+      "Startups": 2509,
+      "Products": 1800,
+      "Research Papers": 2290,
+      "Jobs": 54,
+      "News": 6,
+      "Entity Mapping Log": 4997
+    },
+    "sheet_url": "https://docs.google.com/spreadsheets/d/<sheet-id-redacted>",
+    "grid_expanded": {
+      "Entity Mapping Log": {
+        "rows_before": 4893,
+        "rows_after": 4998,
+        "cols_before": 26,
+        "cols_after": 26
+      }
+    },
+    "sheets_verification": {
+      "tabs": [
+        "Startups",
+        "Products",
+        "Research Papers",
+        "Jobs",
+        "News",
+        "Entity Mapping Log"
+      ],
+      "exactly_six_expected_tabs": true,
+      "data_rows": {
+        "Startups": 2509,
+        "Products": 1800,
+        "Research Papers": 2290,
+        "Jobs": 54,
+        "News": 6,
+        "Entity Mapping Log": 4997
+      },
+      "expected_rows": {
+        "Startups": 2509,
+        "Products": 1800,
+        "Research Papers": 2290,
+        "Jobs": 54,
+        "News": 6,
+        "Entity Mapping Log": 4997
+      },
+      "rows_match": true,
+      "headers_match": {
+        "Startups": true,
+        "Products": true,
+        "Research Papers": true,
+        "Jobs": true,
+        "News": true,
+        "Entity Mapping Log": true
+      },
+      "public_link_reader": false
+    },
+    "sheets_api_requests": 24,
+    "sheets_ok": true
+  },
+  "production_sha256_after": "c153831df1ca7651ad1f98a10a76e01243748f5f02c4f3ae374ef375eda59c6c",
+  "sheet_rows_vs_database": {
+    "Startups": [
+      2509,
+      2509
+    ],
+    "Products": [
+      1800,
+      1800
+    ],
+    "Research Papers": [
+      2290,
+      2290
+    ],
+    "Jobs": [
+      54,
+      54
+    ],
+    "News": [
+      6,
+      6
+    ],
+    "Entity Mapping Log": [
+      4997,
+      4997
+    ]
+  },
+  "result": "PASS"
+}

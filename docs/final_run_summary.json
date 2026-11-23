@@ -1,0 +1,231 @@
+﻿{
+    "started":  "2026-11-21T16:35:14.2327333+05:30",
+    "finished":  "2026-11-21T16:38:02.6968825+05:30",
+    "baseline_backup":  "data\\platform.backup-20261121T110551Z.db",
+    "steps":  {
+                  "00a":  {
+                              "name":  "python \u003e= 3.12",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  0,
+                              "reason":  ""
+                          },
+                  "00b":  {
+                              "name":  "install pinned dependencies",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  35,
+                              "reason":  ""
+                          },
+                  "00c":  {
+                              "name":  "pip check (dependency consistency)",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  2,
+                              "reason":  ""
+                          },
+                  "00d":  {
+                              "name":  "compile all sources",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  0,
+                              "reason":  ""
+                          },
+                  "env":  {
+                              "name":  "gate",
+                              "status":  "OK",
+                              "exit_code":  null,
+                              "seconds":  0,
+                              "reason":  "environment usable"
+                          },
+                  "01":  {
+                             "name":  "verified DB backup (integrity + SHA-256)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  0,
+                             "reason":  ""
+                         },
+                  "02":  {
+                             "name":  "integration verification (live)",
+                             "status":  "FAILED",
+                             "exit_code":  1,
+                             "seconds":  3,
+                             "reason":  ""
+                         },
+                  "g_github":  {
+                                   "name":  "gate",
+                                   "status":  "SKIPPED",
+                                   "exit_code":  null,
+                                   "seconds":  0,
+                                   "reason":  "GitHub="
+                               },
+                  "g_hf":  {
+                               "name":  "gate",
+                               "status":  "SKIPPED",
+                               "exit_code":  null,
+                               "seconds":  0,
+                               "reason":  "HuggingFace="
+                           },
+                  "g_ph":  {
+                               "name":  "gate",
+                               "status":  "SKIPPED",
+                               "exit_code":  null,
+                               "seconds":  0,
+                               "reason":  "ProductHunt="
+                           },
+                  "g_llm":  {
+                                "name":  "gate",
+                                "status":  "SKIPPED",
+                                "exit_code":  null,
+                                "seconds":  0,
+                                "reason":  "Gemini= Groq= DeepSeek="
+                            },
+                  "g_sheets":  {
+                                   "name":  "gate",
+                                   "status":  "SKIPPED",
+                                   "exit_code":  null,
+                                   "seconds":  0,
+                                   "reason":  "SA= Sheets="
+                               },
+                  "03":  {
+                             "name":  "pytest (full suite)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  18,
+                             "reason":  ""
+                         },
+                  "03b":  {
+                              "name":  "ruff lint",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  2,
+                              "reason":  ""
+                          },
+                  "db_write":  {
+                                   "name":  "gate",
+                                   "status":  "OK",
+                                   "exit_code":  null,
+                                   "seconds":  0,
+                                   "reason":  "backup=OK tests=OK"
+                               },
+                  "04a":  {
+                              "name":  "startups: Y Combinator (full)",
+                              "status":  "OK",
+                              "exit_code":  0,
+                              "seconds":  7,
+                              "reason":  ""
+                          },
+                  "04b":  {
+                              "name":  "startups: Hugging Face orgs",
+                              "status":  "SKIPPED",
+                              "exit_code":  null,
+                              "seconds":  0,
+                              "reason":  "Hugging Face not reachable"
+                          },
+                  "05a":  {
+                              "name":  "products: Product Hunt",
+                              "status":  "SKIPPED",
+                              "exit_code":  null,
+                              "seconds":  0,
+                              "reason":  "Product Hunt token not authenticated"
+                          },
+                  "05b":  {
+                              "name":  "products: Hugging Face",
+                              "status":  "SKIPPED",
+                              "exit_code":  null,
+                              "seconds":  0,
+                              "reason":  "Hugging Face not reachable"
+                          },
+                  "06":  {
+                             "name":  "LLM pricing enrichment (evidence-checked)",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "seconds":  0,
+                             "reason":  "prerequisite \u0027g_llm\u0027 is SKIPPED"
+                         },
+                  "07":  {
+                             "name":  "refresh GitHub stars (\u003e24h old)",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "seconds":  0,
+                             "reason":  "prerequisite \u0027g_github\u0027 is SKIPPED"
+                         },
+                  "08":  {
+                             "name":  "rebuild entity resolution",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  8,
+                             "reason":  ""
+                         },
+                  "09":  {
+                             "name":  "fresh news (24h window)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  58,
+                             "reason":  ""
+                         },
+                  "10":  {
+                             "name":  "fresh jobs (24h window)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  30,
+                             "reason":  ""
+                         },
+                  "11":  {
+                             "name":  "live LLM checks (incl. forced fallback)",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "seconds":  0,
+                             "reason":  "prerequisite \u0027g_llm\u0027 is SKIPPED"
+                         },
+                  "12":  {
+                             "name":  "SQLite integrity_check",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  0,
+                             "reason":  ""
+                         },
+                  "13":  {
+                             "name":  "data integrity audit",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  2,
+                             "reason":  ""
+                         },
+                  "14":  {
+                             "name":  "compare baseline vs final DB",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  0,
+                             "reason":  ""
+                         },
+                  "15":  {
+                             "name":  "export: CSV only (Sheets not authenticated)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  2,
+                             "reason":  ""
+                         },
+                  "16":  {
+                             "name":  "docker end-to-end",
+                             "status":  "UNAVAILABLE",
+                             "exit_code":  null,
+                             "seconds":  0,
+                             "reason":  "docker CLI not installed"
+                         },
+                  "17":  {
+                             "name":  "secret scan (repo + logs)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  1,
+                             "reason":  ""
+                         },
+                  "18":  {
+                             "name":  "regenerate FINAL_REPORT.md",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "seconds":  0,
+                             "reason":  ""
+                         }
+              }
+}

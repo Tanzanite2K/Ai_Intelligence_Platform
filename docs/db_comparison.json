@@ -1,0 +1,68 @@
+{
+  "before": "data\\platform.backup-20261121T114155Z.db",
+  "after": "data\\platform.db",
+  "integrity_before": "ok",
+  "integrity_after": "ok",
+  "verticals": {
+    "JOB": {
+      "before": 93,
+      "after": 93,
+      "delta": 0,
+      "added": 0,
+      "added_by_source": {},
+      "removed": 0,
+      "removed_by_source": {},
+      "removed_sample": [],
+      "canonical_name_changes": 0,
+      "name_change_pairs": []
+    },
+    "NEWS": {
+      "before": 16,
+      "after": 16,
+      "delta": 0,
+      "added": 0,
+      "added_by_source": {},
+      "removed": 0,
+      "removed_by_source": {},
+      "removed_sample": [],
+      "canonical_name_changes": 0,
+      "name_change_pairs": []
+    },
+    "PRODUCT": {
+      "before": 1800,
+      "after": 1800,
+      "delta": 0,
+      "added": 0,
+      "added_by_source": {},
+      "removed": 0,
+      "removed_by_source": {},
+      "removed_sample": [],
+      "canonical_name_changes": 0,
+      "name_change_pairs": []
+    },
+    "RESEARCH_PAPER": {
+      "before": 2290,
+      "after": 2290,
+      "delta": 0,
+      "added": 0,
+      "added_by_source": {},
+      "removed": 0,
+      "removed_by_source": {},
+      "removed_sample": [],
+      "canonical_name_changes": 0,
+      "name_change_pairs": []
+    },
+    "STARTUP": {
+      "before": 2509,
+      "after": 2509,
+      "delta": 0,
+      "added": 0,
+      "added_by_source": {},
+      "removed": 0,
+      "removed_by_source": {},
+      "removed_sample": [],
+      "canonical_name_changes": 0,
+      "name_change_pairs": []
+    }
+  }
+}

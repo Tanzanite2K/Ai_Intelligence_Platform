@@ -1,0 +1,55 @@
+{
+  "taken_at": "2026-11-21T16:01:11Z",
+  "integrity": "ok",
+  "counts": {
+    "canonical_entities": 62,
+    "crawl_checkpoints": 18,
+    "dead_letters": 16,
+    "entity_mappings": 4892,
+    "records": 6708,
+    "seen_items": 0,
+    "source_runs": 42
+  },
+  "records_by_type": {
+    "JOB": 93,
+    "NEWS": 16,
+    "PRODUCT": 1800,
+    "RESEARCH_PAPER": 2290,
+    "STARTUP": 2509
+  },
+  "news_untagged": 16,
+  "news_tagged": 0,
+  "dead_letters_by_stage": {
+    "llm.news_entities": 16
+  },
+  "fp_dead_letters": "b7216db90cec0304da564706e77646373bac0283557b912ae8688755eb9af321",
+  "fp_non_news_records": "e7264bdc943a1a347204949406fdb779e35c011abbfec4a0d7c4a5036d1bd849",
+  "fp_news_out_of_scope": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fp_news_identity": "11d38204b8d600f221ced889223fabb7a8361d295b8486376ce4f9962b35835d",
+  "fp_other_tables": {
+    "canonical_entities": "55e2bfc2e6cb2d20ed2f16dfa7f2c7d0f5a204a4fd99b7c6490cb9b151348838",
+    "source_runs": "3b80b0c51610d635ebe18ab4d902ef7980de8e9c436dcd8653d97d465bccfc4b",
+    "crawl_checkpoints": "f2cb0b7c194e9ab55c5288208eaa2cf12f379330e6e22696da7a089f7d2e5a3e",
+    "seen_items": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "mappings_max_id": 4892,
+  "fp_mappings": "42841aa4d7e472782e378a70a88e379d5b3e159a640863ec2f6b2ca3702e87fe",
+  "dead_letter_keys": [
+    "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar",
+    "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers",
+    "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate",
+    "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models",
+    "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model",
+    "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model",
+    "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter",
+    "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too",
+    "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing",
+    "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
+    "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues",
+    "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+    "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+    "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+    "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
+    "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+  ]
+}

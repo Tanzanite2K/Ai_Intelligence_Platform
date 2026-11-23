@@ -1,0 +1,806 @@
+{
+  "report": "phase7b_live_20261122T172812Z",
+  "stamp": "20261122T172812Z",
+  "mode": "LIVE (Run B)",
+  "target": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+  "backup_dir": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z",
+  "in_folder_backups": [
+    "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.pre7b-20261122T172812Z.cold.db",
+    "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.backup-20261122T172812Z.db"
+  ],
+  "live_writes": [
+    {
+      "at": "2026-11-22T17:28:15.198927+00:00",
+      "operation": "alembic stamp 0001_baseline",
+      "target": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db"
+    },
+    {
+      "at": "2026-11-22T17:28:15.437849+00:00",
+      "operation": "alembic upgrade 0002_history_tables",
+      "target": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db"
+    },
+    {
+      "at": "2026-11-22T17:28:15.743642+00:00",
+      "operation": "baseline backfill (dry run, rolled back)",
+      "target": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db"
+    },
+    {
+      "at": "2026-11-22T17:28:15.969552+00:00",
+      "operation": "baseline backfill (commit)",
+      "target": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db"
+    }
+  ],
+  "live_write_operations_allowed": [
+    "lock probe: BEGIN EXCLUSIVE; ROLLBACK  (takes the write lock for a moment, writes no data; hash re-checked after)",
+    "alembic -x db_url=<live> -x allow_live=yes stamp 0001_baseline  (creates alembic_version, 1 row)",
+    "alembic -x db_url=<live> -x allow_live=yes upgrade 0002_history_tables  (creates 12 empty tables + 26 indexes)",
+    "phase7b_backfill --db <live> --allow-live --dry-run  (inserts inside a transaction, then ROLLBACK)",
+    "phase7b_backfill --db <live> --allow-live  (1 batch + 6,708 observations + 6,708 versions, one COMMIT)"
+  ],
+  "rehearsal_fingerprints": {
+    "canonical_entities": {
+      "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+      "index_ddl": [
+        "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+      ],
+      "rows": 62,
+      "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+    },
+    "crawl_checkpoints": {
+      "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+      "index_ddl": [],
+      "rows": 18,
+      "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+    },
+    "dead_letters": {
+      "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+      "index_ddl": [
+        "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+      ],
+      "rows": 16,
+      "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+    },
+    "entity_mappings": {
+      "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+      "index_ddl": [
+        "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+      ],
+      "rows": 4944,
+      "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+    },
+    "records": {
+      "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+      "index_ddl": [
+        "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+        "CREATE INDEX ix_records_source ON records (source_name)",
+        "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+        "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+      ],
+      "rows": 6708,
+      "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+    },
+    "seen_items": {
+      "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+      "index_ddl": [
+        "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+      ],
+      "rows": 0,
+      "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+    },
+    "source_runs": {
+      "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+      "index_ddl": [
+        "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+      ],
+      "rows": 42,
+      "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+    }
+  },
+  "start": {
+    "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+    "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+    "bytes": 19185664,
+    "mtime_ns": 1795277344837342000
+  },
+  "F0": {
+    "canonical_entities": {
+      "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+      "index_ddl": [
+        "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+      ],
+      "rows": 62,
+      "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+    },
+    "crawl_checkpoints": {
+      "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+      "index_ddl": [],
+      "rows": 18,
+      "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+    },
+    "dead_letters": {
+      "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+      "index_ddl": [
+        "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+      ],
+      "rows": 16,
+      "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+    },
+    "entity_mappings": {
+      "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+      "index_ddl": [
+        "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+      ],
+      "rows": 4944,
+      "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+    },
+    "records": {
+      "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+      "index_ddl": [
+        "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+        "CREATE INDEX ix_records_source ON records (source_name)",
+        "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+        "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+      ],
+      "rows": 6708,
+      "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+    },
+    "seen_items": {
+      "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+      "index_ddl": [
+        "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+      ],
+      "rows": 0,
+      "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+    },
+    "source_runs": {
+      "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+      "index_ddl": [
+        "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+      ],
+      "rows": 42,
+      "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+    }
+  },
+  "by_type": {
+    "JOB": 93,
+    "NEWS": 16,
+    "PRODUCT": 1800,
+    "RESEARCH_PAPER": 2290,
+    "STARTUP": 2509
+  },
+  "backups": {
+    "cold_external": {
+      "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+      "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+      "bytes": 19185664,
+      "mtime_ns": 1795368493903763500
+    },
+    "cold_in_data": {
+      "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.pre7b-20261122T172812Z.cold.db",
+      "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+      "bytes": 19185664,
+      "mtime_ns": 1795368493916909500
+    },
+    "online_external": {
+      "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.online.db",
+      "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+      "bytes": 19185664,
+      "mtime_ns": 1795368493958939200
+    },
+    "online_in_data": {
+      "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.backup-20261122T172812Z.db",
+      "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+      "bytes": 19185664,
+      "mtime_ns": 1795368493976963900
+    }
+  },
+  "end": {
+    "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+    "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "bytes": 41025536,
+    "mtime_ns": 1795368496108282200
+  },
+  "result": "PASS",
+  "passed": 13,
+  "steps_run": 13,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Gate: Run A report PASS and the same backfill code version",
+      "ok": true,
+      "details": {
+        "rehearsal_report": "docs\\phase7b_rehearsal_20261122T171614Z.json",
+        "rehearsal_result": "PASS",
+        "rehearsal_steps": "18/18",
+        "backfill_code_version": "6b553d3c0aead549",
+        "backfill_code_version_matches_rehearsal": true
+      },
+      "seconds": 0.001
+    },
+    {
+      "step": 2,
+      "name": "No other writer: API/web ports closed, no journal files, exclusive-lock probe",
+      "ok": true,
+      "details": {
+        "ports_in_use": {
+          "8000": false,
+          "3000": false
+        },
+        "side_files": [],
+        "exclusive_lock_probe": {
+          "acquired": true,
+          "error": null,
+          "file_unchanged_by_probe": true,
+          "side_files_after": []
+        }
+      },
+      "seconds": 1.108
+    },
+    {
+      "step": 3,
+      "name": "Identity: path, SHA-256, not registered, 7 tables, fingerprints equal to Run A",
+      "ok": true,
+      "details": {
+        "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+        "is_project_live_path": true,
+        "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+        "expected_sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+        "sha256_matches": true,
+        "alembic_revision": null,
+        "tables": [
+          "canonical_entities",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entity_mappings",
+          "records",
+          "seen_items",
+          "source_runs"
+        ],
+        "fingerprints_match_run_a": true,
+        "rows": {
+          "canonical_entities": 62,
+          "crawl_checkpoints": 18,
+          "dead_letters": 16,
+          "entity_mappings": 4944,
+          "records": 6708,
+          "seen_items": 0,
+          "source_runs": 42
+        },
+        "records_by_type": {
+          "JOB": 93,
+          "NEWS": 16,
+          "PRODUCT": 1800,
+          "RESEARCH_PAPER": 2290,
+          "STARTUP": 2509
+        },
+        "integrity": "ok"
+      },
+      "seconds": 0.196
+    },
+    {
+      "step": 4,
+      "name": "Backups: cold byte-for-byte + online, outside OneDrive and in data\\",
+      "ok": true,
+      "details": {
+        "target_unchanged_during_backup": true,
+        "cold_external": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493903763500
+        },
+        "cold_in_data": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.pre7b-20261122T172812Z.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493916909500
+        },
+        "online_external": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.online.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493958939200
+        },
+        "online_in_data": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.backup-20261122T172812Z.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795368493976963900
+        }
+      },
+      "seconds": 0.171
+    },
+    {
+      "step": 5,
+      "name": "Backup verification: integrity, fingerprints, test restore (SHA-256)",
+      "ok": true,
+      "details": {
+        "integrity": {
+          "cold_external": "ok",
+          "cold_in_data": "ok",
+          "online_external": "ok",
+          "online_in_data": "ok"
+        },
+        "fingerprints_equal_live": {
+          "cold_external": true,
+          "cold_in_data": true,
+          "online_external": true,
+          "online_in_data": true
+        },
+        "test_restore": {
+          "ok": true,
+          "from": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\platform.pre7b.cold.db",
+          "to": "C:\\FrontierAtlas-backups\\phase7b-live-20261122T172812Z\\restore-test.db",
+          "previous_file_kept_as": null,
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "expected_sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "integrity": "ok"
+        },
+        "test_restore_fingerprints_match": true
+      },
+      "seconds": 0.704
+    },
+    {
+      "step": 6,
+      "name": "alembic stamp 0001_baseline",
+      "ok": true,
+      "details": {
+        "current": "0001_baseline",
+        "existing_unchanged": true,
+        "diff": []
+      },
+      "seconds": 0.648
+    },
+    {
+      "step": 7,
+      "name": "alembic upgrade 0002_history_tables (12 empty tables)",
+      "ok": true,
+      "details": {
+        "current": "0002_history_tables",
+        "history_tables": {
+          "catalogue_scans": 0,
+          "claims": 0,
+          "entities": 0,
+          "entity_resolution_events": 0,
+          "evidence_links": 0,
+          "ingestion_batches": 0,
+          "metric_snapshots": 0,
+          "presence_events": 0,
+          "record_observations": 0,
+          "record_versions": 0,
+          "source_groups": 0,
+          "source_reliability_daily": 0
+        },
+        "existing_unchanged": true,
+        "diff": []
+      },
+      "seconds": 0.306
+    },
+    {
+      "step": 8,
+      "name": "Backfill dry run (rolled back)",
+      "ok": true,
+      "details": {
+        "dry_run": {
+          "db": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "dry_run": true,
+          "batch_id": "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+          "records": 6708,
+          "inserted": {
+            "ingestion_batches": 1,
+            "record_observations": 6708,
+            "record_versions": 6708
+          },
+          "totals_in_transaction": {
+            "record_observations": 6708,
+            "record_versions": 6708,
+            "ingestion_batches": 1,
+            "newly_discovered": 0
+          },
+          "committed": false,
+          "code_version": "6b553d3c0aead549"
+        },
+        "history_rows_after_rollback": 0
+      },
+      "seconds": 0.226
+    },
+    {
+      "step": 9,
+      "name": "Backfill: 6,708 records labelled baseline_backfill (one transaction)",
+      "ok": true,
+      "details": {
+        "backfill": {
+          "db": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "dry_run": false,
+          "batch_id": "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+          "records": 6708,
+          "inserted": {
+            "ingestion_batches": 1,
+            "record_observations": 6708,
+            "record_versions": 6708
+          },
+          "totals_in_transaction": {
+            "record_observations": 6708,
+            "record_versions": 6708,
+            "ingestion_batches": 1,
+            "newly_discovered": 0
+          },
+          "committed": true,
+          "code_version": "6b553d3c0aead549"
+        },
+        "seconds": 0.148
+      },
+      "seconds": 0.148
+    },
+    {
+      "step": 10,
+      "name": "Existing 7 tables: same schemas, row counts and row checksums",
+      "ok": true,
+      "details": {
+        "fingerprints_unchanged": true,
+        "diff": [],
+        "sqlite_master_unchanged": true,
+        "orm_vs_schema_differences": [],
+        "fingerprints_after": {
+          "canonical_entities": {
+            "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+            "index_ddl": [
+              "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+            ],
+            "rows": 62,
+            "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+          },
+          "crawl_checkpoints": {
+            "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+            "index_ddl": [],
+            "rows": 18,
+            "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+          },
+          "dead_letters": {
+            "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+            "index_ddl": [
+              "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+            ],
+            "rows": 16,
+            "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+          },
+          "entity_mappings": {
+            "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+            "index_ddl": [
+              "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+            ],
+            "rows": 4944,
+            "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+          },
+          "records": {
+            "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+            "index_ddl": [
+              "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+              "CREATE INDEX ix_records_source ON records (source_name)",
+              "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+              "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+            ],
+            "rows": 6708,
+            "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+          },
+          "seen_items": {
+            "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+            "index_ddl": [
+              "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+            ],
+            "rows": 0,
+            "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+          },
+          "source_runs": {
+            "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+            "index_ddl": [
+              "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+            ],
+            "rows": 42,
+            "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+          }
+        }
+      },
+      "seconds": 0.224
+    },
+    {
+      "step": 11,
+      "name": "History tables, 0 newly discovered, foreign keys, integrity",
+      "ok": true,
+      "details": {
+        "passed": 30,
+        "total": 30,
+        "checks": [
+          {
+            "check": "batch rows",
+            "expected": 1,
+            "got": 1,
+            "ok": true
+          },
+          {
+            "check": "batch label",
+            "expected": [
+              [
+                "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+                "baseline_backfill",
+                "completed",
+                "2026-11-21 00:00:00.000000"
+              ]
+            ],
+            "got": [
+              [
+                "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+                "baseline_backfill",
+                "completed",
+                "2026-11-21 00:00:00.000000"
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "observations",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "observations not baseline or other batch",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "observations, distinct records",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "observations mismatching records",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "records without an observation",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "versions",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "versions not v1/open/baseline",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "versions mismatching records (content_hash, payload, valid_from)",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "records without a version",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "JOB: records / observations / versions",
+            "expected": [
+              [
+                93,
+                93,
+                93
+              ]
+            ],
+            "got": [
+              [
+                93,
+                93,
+                93
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "NEWS: records / observations / versions",
+            "expected": [
+              [
+                16,
+                16,
+                16
+              ]
+            ],
+            "got": [
+              [
+                16,
+                16,
+                16
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "PRODUCT: records / observations / versions",
+            "expected": [
+              [
+                1800,
+                1800,
+                1800
+              ]
+            ],
+            "got": [
+              [
+                1800,
+                1800,
+                1800
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "RESEARCH_PAPER: records / observations / versions",
+            "expected": [
+              [
+                2290,
+                2290,
+                2290
+              ]
+            ],
+            "got": [
+              [
+                2290,
+                2290,
+                2290
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "STARTUP: records / observations / versions",
+            "expected": [
+              [
+                2509,
+                2509,
+                2509
+              ]
+            ],
+            "got": [
+              [
+                2509,
+                2509,
+                2509
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "catalogue_scans empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "claims empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "entities empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "entity_resolution_events empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "evidence_links empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "metric_snapshots empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "presence_events empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "source_groups empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "source_reliability_daily empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "presence events in the baseline batch",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "newly discovered (section 6 rule)",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "foreign_key_check",
+            "expected": [],
+            "got": [],
+            "ok": true
+          },
+          {
+            "check": "integrity_check",
+            "expected": "ok",
+            "got": "ok",
+            "ok": true
+          },
+          {
+            "check": "alembic revision",
+            "expected": "0002_history_tables",
+            "got": "0002_history_tables",
+            "ok": true
+          }
+        ]
+      },
+      "seconds": 0.197
+    },
+    {
+      "step": 12,
+      "name": "Read-only API on the migrated database answers as before (before restart)",
+      "ok": true,
+      "details": {
+        "endpoints": 11,
+        "all_status_200": true,
+        "differing_endpoints": [],
+        "ignored_timestamp_keys": [
+          "generatedAt",
+          "generated_at",
+          "index_built_at"
+        ]
+      },
+      "seconds": 5.263
+    },
+    {
+      "step": 13,
+      "name": "Final state recorded",
+      "ok": true,
+      "details": {
+        "final": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+          "bytes": 41025536,
+          "mtime_ns": 1795368496108282200
+        },
+        "integrity": "ok",
+        "bytes_before": 19185664,
+        "bytes_after": 41025536
+      },
+      "seconds": 0.214
+    }
+  ]
+}

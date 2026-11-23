@@ -1,0 +1,1057 @@
+{
+  "report": "phase7b_rehearsal (Run A)",
+  "stamp": "20261122T171614Z",
+  "workdir": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z",
+  "backup_dir": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z",
+  "live": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+  "live_start": {
+    "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+    "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+    "bytes": 19185664,
+    "mtime_ns": 1795277344837342000
+  },
+  "cold": {
+    "path": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.cold.db",
+    "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+    "bytes": 19185664,
+    "mtime_ns": 1795367774639087300
+  },
+  "online": {
+    "path": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.online.db",
+    "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+    "bytes": 19185664,
+    "mtime_ns": 1795367774712067300
+  },
+  "F0": {
+    "canonical_entities": {
+      "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+      "index_ddl": [
+        "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+      ],
+      "rows": 62,
+      "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+    },
+    "crawl_checkpoints": {
+      "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+      "index_ddl": [],
+      "rows": 18,
+      "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+    },
+    "dead_letters": {
+      "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+      "index_ddl": [
+        "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+      ],
+      "rows": 16,
+      "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+    },
+    "entity_mappings": {
+      "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+      "index_ddl": [
+        "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+      ],
+      "rows": 4944,
+      "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+    },
+    "records": {
+      "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+      "index_ddl": [
+        "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+        "CREATE INDEX ix_records_source ON records (source_name)",
+        "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+        "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+      ],
+      "rows": 6708,
+      "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+    },
+    "seen_items": {
+      "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+      "index_ddl": [
+        "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+      ],
+      "rows": 0,
+      "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+    },
+    "source_runs": {
+      "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+      "index_ddl": [
+        "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+      ],
+      "rows": 42,
+      "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+    }
+  },
+  "master_before": [
+    [
+      "index",
+      "ix_canonical_entities_domain",
+      "canonical_entities",
+      "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+    ],
+    [
+      "index",
+      "ix_dead_letters_stage",
+      "dead_letters",
+      "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+    ],
+    [
+      "index",
+      "ix_entity_mapping_review",
+      "entity_mappings",
+      "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+    ],
+    [
+      "index",
+      "ix_records_content_hash",
+      "records",
+      "CREATE INDEX ix_records_content_hash ON records (content_hash)"
+    ],
+    [
+      "index",
+      "ix_records_source",
+      "records",
+      "CREATE INDEX ix_records_source ON records (source_name)"
+    ],
+    [
+      "index",
+      "ix_records_type_entity",
+      "records",
+      "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)"
+    ],
+    [
+      "index",
+      "ix_records_type_published",
+      "records",
+      "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+    ],
+    [
+      "index",
+      "ix_seen_items_source",
+      "seen_items",
+      "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+    ],
+    [
+      "index",
+      "ix_source_runs_source",
+      "source_runs",
+      "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+    ],
+    [
+      "index",
+      "sqlite_autoindex_canonical_entities_1",
+      "canonical_entities",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_canonical_entities_2",
+      "canonical_entities",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_crawl_checkpoints_1",
+      "crawl_checkpoints",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_entity_mappings_1",
+      "entity_mappings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_records_1",
+      "records",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_seen_items_1",
+      "seen_items",
+      null
+    ],
+    [
+      "table",
+      "canonical_entities",
+      "canonical_entities",
+      "CREATE TABLE canonical_entities (\n\tid INTEGER NOT NULL, \n\tcanonical_name VARCHAR(300) NOT NULL, \n\tnormalized_key VARCHAR(300) NOT NULL, \n\tdomain VARCHAR(255), \n\taliases JSON NOT NULL, \n\tkind VARCHAR(32) NOT NULL, \n\torigin VARCHAR(32) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (canonical_name), \n\tUNIQUE (normalized_key)\n)"
+    ],
+    [
+      "table",
+      "crawl_checkpoints",
+      "crawl_checkpoints",
+      "CREATE TABLE crawl_checkpoints (\n\tsource VARCHAR(120) NOT NULL, \n\tcursor JSON NOT NULL, \n\tlast_run_at DATETIME, \n\tlast_success_at DATETIME, \n\titems_seen INTEGER NOT NULL, \n\tPRIMARY KEY (source)\n)"
+    ],
+    [
+      "table",
+      "dead_letters",
+      "dead_letters",
+      "CREATE TABLE dead_letters (\n\tid INTEGER NOT NULL, \n\tstage VARCHAR(64) NOT NULL, \n\t\"key\" VARCHAR(300), \n\tpayload JSON NOT NULL, \n\terror TEXT NOT NULL, \n\tattempts INTEGER NOT NULL, \n\tcreated_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, \n\tPRIMARY KEY (id)\n)"
+    ],
+    [
+      "table",
+      "entity_mappings",
+      "entity_mappings",
+      "CREATE TABLE entity_mappings (\n\tid INTEGER NOT NULL, \n\toriginal_name VARCHAR(300) NOT NULL, \n\tcanonical_name VARCHAR(300) NOT NULL, \n\tmatch_method VARCHAR(32) NOT NULL, \n\tconfidence FLOAT NOT NULL, \n\tneeds_review BOOLEAN NOT NULL, \n\tentity_kind VARCHAR(32) NOT NULL, \n\tsource_url TEXT NOT NULL, \n\tresolved_at DATETIME NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT uq_entity_mapping UNIQUE (original_name, canonical_name, source_url)\n)"
+    ],
+    [
+      "table",
+      "records",
+      "records",
+      "CREATE TABLE records (\n\tid INTEGER NOT NULL, \n\trecord_type VARCHAR(32) NOT NULL, \n\tschema_version VARCHAR(16) NOT NULL, \n\tdedup_hash VARCHAR(64) NOT NULL, \n\tcontent_hash VARCHAR(64) NOT NULL, \n\tentity_name VARCHAR(300), \n\tsource_name VARCHAR(200) NOT NULL, \n\tsource_url TEXT NOT NULL, \n\tcollected_at DATETIME NOT NULL, \n\tpublished_at DATETIME, \n\tdate_verified BOOLEAN, \n\tvalidation_status VARCHAR(16) NOT NULL, \n\tconfidence FLOAT NOT NULL, \n\tsource_priority INTEGER NOT NULL, \n\textraction_method VARCHAR(32) NOT NULL, \n\tpayload JSON NOT NULL, \n\tcreated_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, \n\tupdated_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT uq_records_type_dedup UNIQUE (record_type, dedup_hash)\n)"
+    ],
+    [
+      "table",
+      "seen_items",
+      "seen_items",
+      "CREATE TABLE seen_items (\n\turl_hash VARCHAR(64) NOT NULL, \n\tsource VARCHAR(120) NOT NULL, \n\tcontent_hash VARCHAR(64), \n\tfirst_seen_at DATETIME NOT NULL, \n\tlast_seen_at DATETIME NOT NULL, \n\tPRIMARY KEY (url_hash)\n)"
+    ],
+    [
+      "table",
+      "source_runs",
+      "source_runs",
+      "CREATE TABLE source_runs (\n\tid INTEGER NOT NULL, \n\tsource VARCHAR(120) NOT NULL, \n\tvertical VARCHAR(32) NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tfetched INTEGER NOT NULL, \n\tstored INTEGER NOT NULL, \n\tduplicates INTEGER NOT NULL, \n\trejected INTEGER NOT NULL, \n\terror TEXT, \n\tPRIMARY KEY (id)\n)"
+    ]
+  ],
+  "size_after_upgrade": 19349504,
+  "backfill_seconds": 0.162,
+  "measurements": {
+    "live_bytes": 19185664,
+    "after_upgrade_bytes": 19349504,
+    "after_backfill_bytes": 41025536,
+    "growth_bytes": 21839872,
+    "after_backfill_mib": 39.12,
+    "backfill_seconds": 0.162,
+    "rehearsal_target": {
+      "path": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\platform.db",
+      "sha256": "953810ad6dff50d2cf5692adbe96aff96188177ec124ad17af4d11e35588b631",
+      "bytes": 41025536,
+      "mtime_ns": 1795367776280696100
+    }
+  },
+  "live_end": {
+    "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+    "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+    "bytes": 19185664,
+    "mtime_ns": 1795277344837342000
+  },
+  "result": "PASS",
+  "passed": 18,
+  "steps_run": 18,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Pre-flight: folders outside OneDrive/project, live read-only facts, live not registered with Alembic",
+      "ok": true,
+      "details": {
+        "live": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795277344837342000
+        },
+        "live_alembic_revision": null,
+        "live_registered_with_alembic": false,
+        "free_bytes": 49266675712,
+        "python": "3.13.12",
+        "sqlite": "3.50.4",
+        "alembic": "1.20.1",
+        "sqlalchemy": "2.0.41",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "app_running_left_untouched": true,
+        "onedrive_left_running": true,
+        "backfill_code_version": "6b553d3c0aead549"
+      },
+      "seconds": 0.534
+    },
+    {
+      "step": 2,
+      "name": "External backups in C:\\FrontierAtlas-backups: cold byte-for-byte copy + online backup",
+      "ok": true,
+      "details": {
+        "cold_copy": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.cold.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795367774639087300
+        },
+        "online_backup": {
+          "path": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.online.db",
+          "sha256": "f54f5263af4a0aca0309f1522a2b714a4953bb662f53f6f3dad33ded1fb70f4e",
+          "bytes": 19185664,
+          "mtime_ns": 1795367774712067300
+        },
+        "live_unchanged_during_copy": true,
+        "cold_sha256_equals_live": true
+      },
+      "seconds": 0.168
+    },
+    {
+      "step": 3,
+      "name": "Backup verification: integrity, 7-table fingerprints equal, planned row counts",
+      "ok": true,
+      "details": {
+        "integrity": {
+          "live": "ok",
+          "cold": "ok",
+          "online": "ok"
+        },
+        "cold_matches_live": true,
+        "online_matches_live": true,
+        "row_counts": {
+          "canonical_entities": 62,
+          "crawl_checkpoints": 18,
+          "dead_letters": 16,
+          "entity_mappings": 4944,
+          "records": 6708,
+          "seen_items": 0,
+          "source_runs": 42
+        },
+        "row_counts_as_planned": true,
+        "fingerprints": {
+          "canonical_entities": {
+            "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+            "index_ddl": [
+              "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+            ],
+            "rows": 62,
+            "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+          },
+          "crawl_checkpoints": {
+            "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+            "index_ddl": [],
+            "rows": 18,
+            "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+          },
+          "dead_letters": {
+            "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+            "index_ddl": [
+              "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+            ],
+            "rows": 16,
+            "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+          },
+          "entity_mappings": {
+            "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+            "index_ddl": [
+              "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+            ],
+            "rows": 4944,
+            "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+          },
+          "records": {
+            "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+            "index_ddl": [
+              "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+              "CREATE INDEX ix_records_source ON records (source_name)",
+              "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+              "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+            ],
+            "rows": 6708,
+            "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+          },
+          "seen_items": {
+            "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+            "index_ddl": [
+              "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+            ],
+            "rows": 0,
+            "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+          },
+          "source_runs": {
+            "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+            "index_ddl": [
+              "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+            ],
+            "rows": 42,
+            "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+          }
+        }
+      },
+      "seconds": 0.406
+    },
+    {
+      "step": 4,
+      "name": "Test restore of the cold copy with scripts/db_restore.py (SHA-256 + fingerprints)",
+      "ok": true,
+      "details": {
+        "restore": {
+          "ok": true,
+          "from": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.cold.db",
+          "to": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\restore-test.db",
+          "previous_file_kept_as": null,
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "expected_sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "integrity": "ok"
+        },
+        "fingerprints_match": true,
+        "diff": [],
+        "test_file_removed": true
+      },
+      "seconds": 0.189
+    },
+    {
+      "step": 5,
+      "name": "Rehearsal target = copy of the cold backup (stands in for the live file)",
+      "ok": true,
+      "details": {
+        "rehearsal_target": {
+          "path": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\platform.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795367775385963100
+        }
+      },
+      "seconds": 0.043
+    },
+    {
+      "step": 6,
+      "name": "alembic current (none) -> stamp 0001_baseline -> current",
+      "ok": true,
+      "details": {
+        "current_before": null,
+        "current_after": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "diff": []
+      },
+      "seconds": 0.296
+    },
+    {
+      "step": 7,
+      "name": "alembic upgrade 0002_history_tables -> 12 empty tables",
+      "ok": true,
+      "details": {
+        "current_after": "0002_history_tables",
+        "history_tables": {
+          "catalogue_scans": 0,
+          "claims": 0,
+          "entities": 0,
+          "entity_resolution_events": 0,
+          "evidence_links": 0,
+          "ingestion_batches": 0,
+          "metric_snapshots": 0,
+          "presence_events": 0,
+          "record_observations": 0,
+          "record_versions": 0,
+          "source_groups": 0,
+          "source_reliability_daily": 0
+        },
+        "existing_tables_unchanged": true,
+        "diff": [],
+        "bytes_after_upgrade": 19349504
+      },
+      "seconds": 0.199
+    },
+    {
+      "step": 8,
+      "name": "Backfill dry run (rolled back): 1 batch, 6,708 + 6,708 rows, 0 newly discovered",
+      "ok": true,
+      "details": {
+        "dry_run": {
+          "db": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\platform.db",
+          "dry_run": true,
+          "batch_id": "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+          "records": 6708,
+          "inserted": {
+            "ingestion_batches": 1,
+            "record_observations": 6708,
+            "record_versions": 6708
+          },
+          "totals_in_transaction": {
+            "record_observations": 6708,
+            "record_versions": 6708,
+            "ingestion_batches": 1,
+            "newly_discovered": 0
+          },
+          "committed": false,
+          "code_version": "6b553d3c0aead549"
+        },
+        "history_rows_after_rollback": 0,
+        "existing_tables_unchanged": true
+      },
+      "seconds": 0.223
+    },
+    {
+      "step": 9,
+      "name": "Backfill (one transaction), labelled baseline_backfill",
+      "ok": true,
+      "details": {
+        "backfill": {
+          "db": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\platform.db",
+          "dry_run": false,
+          "batch_id": "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+          "records": 6708,
+          "inserted": {
+            "ingestion_batches": 1,
+            "record_observations": 6708,
+            "record_versions": 6708
+          },
+          "totals_in_transaction": {
+            "record_observations": 6708,
+            "record_versions": 6708,
+            "ingestion_batches": 1,
+            "newly_discovered": 0
+          },
+          "committed": true,
+          "code_version": "6b553d3c0aead549"
+        },
+        "seconds": 0.162
+      },
+      "seconds": 0.162
+    },
+    {
+      "step": 10,
+      "name": "Backfill re-run writes 0 rows (idempotent)",
+      "ok": true,
+      "details": {
+        "rerun": {
+          "ingestion_batches": 0,
+          "record_observations": 0,
+          "record_versions": 0
+        }
+      },
+      "seconds": 0.062
+    },
+    {
+      "step": 11,
+      "name": "Existing 7 tables unchanged: schema, row counts, row checksums, ORM comparison",
+      "ok": true,
+      "details": {
+        "fingerprints_unchanged": true,
+        "diff": [],
+        "sqlite_master_unchanged": true,
+        "orm_vs_schema_differences": [],
+        "fingerprints_after": {
+          "canonical_entities": {
+            "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+            "index_ddl": [
+              "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+            ],
+            "rows": 62,
+            "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+          },
+          "crawl_checkpoints": {
+            "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+            "index_ddl": [],
+            "rows": 18,
+            "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+          },
+          "dead_letters": {
+            "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+            "index_ddl": [
+              "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+            ],
+            "rows": 16,
+            "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+          },
+          "entity_mappings": {
+            "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+            "index_ddl": [
+              "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+            ],
+            "rows": 4944,
+            "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+          },
+          "records": {
+            "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+            "index_ddl": [
+              "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+              "CREATE INDEX ix_records_source ON records (source_name)",
+              "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+              "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+            ],
+            "rows": 6708,
+            "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+          },
+          "seen_items": {
+            "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+            "index_ddl": [
+              "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+            ],
+            "rows": 0,
+            "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+          },
+          "source_runs": {
+            "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+            "index_ddl": [
+              "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+            ],
+            "rows": 42,
+            "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+          }
+        }
+      },
+      "seconds": 0.23
+    },
+    {
+      "step": 12,
+      "name": "History verification: counts, cross-checks with records, foreign keys, integrity",
+      "ok": true,
+      "details": {
+        "passed": 30,
+        "total": 30,
+        "checks": [
+          {
+            "check": "batch rows",
+            "expected": 1,
+            "got": 1,
+            "ok": true
+          },
+          {
+            "check": "batch label",
+            "expected": [
+              [
+                "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+                "baseline_backfill",
+                "completed",
+                "2026-11-21 00:00:00.000000"
+              ]
+            ],
+            "got": [
+              [
+                "b4a3bf92-cde8-55c7-a209-8d03bf2c74e4",
+                "baseline_backfill",
+                "completed",
+                "2026-11-21 00:00:00.000000"
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "observations",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "observations not baseline or other batch",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "observations, distinct records",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "observations mismatching records",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "records without an observation",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "versions",
+            "expected": 6708,
+            "got": 6708,
+            "ok": true
+          },
+          {
+            "check": "versions not v1/open/baseline",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "versions mismatching records (content_hash, payload, valid_from)",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "records without a version",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "JOB: records / observations / versions",
+            "expected": [
+              [
+                93,
+                93,
+                93
+              ]
+            ],
+            "got": [
+              [
+                93,
+                93,
+                93
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "NEWS: records / observations / versions",
+            "expected": [
+              [
+                16,
+                16,
+                16
+              ]
+            ],
+            "got": [
+              [
+                16,
+                16,
+                16
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "PRODUCT: records / observations / versions",
+            "expected": [
+              [
+                1800,
+                1800,
+                1800
+              ]
+            ],
+            "got": [
+              [
+                1800,
+                1800,
+                1800
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "RESEARCH_PAPER: records / observations / versions",
+            "expected": [
+              [
+                2290,
+                2290,
+                2290
+              ]
+            ],
+            "got": [
+              [
+                2290,
+                2290,
+                2290
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "STARTUP: records / observations / versions",
+            "expected": [
+              [
+                2509,
+                2509,
+                2509
+              ]
+            ],
+            "got": [
+              [
+                2509,
+                2509,
+                2509
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "check": "catalogue_scans empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "claims empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "entities empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "entity_resolution_events empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "evidence_links empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "metric_snapshots empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "presence_events empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "source_groups empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "source_reliability_daily empty",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "presence events in the baseline batch",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "newly discovered (section 6 rule)",
+            "expected": 0,
+            "got": 0,
+            "ok": true
+          },
+          {
+            "check": "foreign_key_check",
+            "expected": [],
+            "got": [],
+            "ok": true
+          },
+          {
+            "check": "integrity_check",
+            "expected": "ok",
+            "got": "ok",
+            "ok": true
+          },
+          {
+            "check": "alembic revision",
+            "expected": "0002_history_tables",
+            "got": "0002_history_tables",
+            "ok": true
+          }
+        ]
+      },
+      "seconds": 0.217
+    },
+    {
+      "step": 13,
+      "name": "New-discovery rule: baseline record seen again = not new; unseen record = new (throw-away copy)",
+      "ok": true,
+      "details": {
+        "new_before_probe": 0,
+        "baseline_record_seen_live_again": "RESEARCH_PAPER/9ad2dce24dfe",
+        "new_after_probe": [
+          [
+            "NEWS",
+            "phase7b-rehearsal-unseen"
+          ]
+        ]
+      },
+      "seconds": 0.078
+    },
+    {
+      "step": 14,
+      "name": "Read-only API on the migrated copy returns the same responses as on the original",
+      "ok": true,
+      "details": {
+        "endpoints": 11,
+        "all_status_200": true,
+        "differing_endpoints": [],
+        "ignored_timestamp_keys": [
+          "generatedAt",
+          "generated_at",
+          "index_built_at"
+        ],
+        "before_pre_migration_copy": {
+          "/health": {
+            "status": 200,
+            "sha256": "08e2c358ce13cb67f94ebb35b0f67c8763190a857c0db68da6eb196dfe9da46a"
+          },
+          "/api/v1/dashboard/overview": {
+            "status": 200,
+            "sha256": "053f38885d3ab5da8ed7f4d6bc7409b5f675f1fc277316d08ce5e9ea6ef1a5fc"
+          },
+          "/api/v1/startups": {
+            "status": 200,
+            "sha256": "d534731317e18772b9b62fe1c584976f6502283ecf5f437b8ebf328ec115813f"
+          },
+          "/api/v1/products": {
+            "status": 200,
+            "sha256": "741a9d05468060f9a92f5e196a5e554465aff7e88a33974de49b4451e0a26fb0"
+          },
+          "/api/v1/papers": {
+            "status": 200,
+            "sha256": "5045e8fdbb2aaf61a089bb40e2cafa92ce93d48ab77457db938b79c4b869d1eb"
+          },
+          "/api/v1/jobs": {
+            "status": 200,
+            "sha256": "2c1f5b3c1335815cf1d47bb326d1a21d443f6fd837ae872c50a643670ef6e544"
+          },
+          "/api/v1/news": {
+            "status": 200,
+            "sha256": "2e87630602481d301730891f82f8752a7892c38064238e1545cfe59c79cd4382"
+          },
+          "/api/v1/intelligence/brief": {
+            "status": 200,
+            "sha256": "b412d612ab8ee48e3bb14eaf866adf3801a9432079743aca3cd8a9e59b2b4765"
+          },
+          "/api/v1/intelligence/topics": {
+            "status": 200,
+            "sha256": "f9088bb2d8db246afdedc952db9c433162c4e332b8c78dc6dd02da3406e4d7ba"
+          },
+          "/api/v1/relationships/overview": {
+            "status": 200,
+            "sha256": "5fb26256f88c222300c9df76c6ea219400653acb520b579812c60e81a3ec333f"
+          },
+          "/api/v1/operations/ingestion-runs": {
+            "status": 200,
+            "sha256": "58b17cdfeff93487f0d6ede69ff11f04e742f1883fb8257510ebe7ad56dd5500"
+          }
+        },
+        "after_migrated_copy": {
+          "/health": {
+            "status": 200,
+            "sha256": "08e2c358ce13cb67f94ebb35b0f67c8763190a857c0db68da6eb196dfe9da46a"
+          },
+          "/api/v1/dashboard/overview": {
+            "status": 200,
+            "sha256": "053f38885d3ab5da8ed7f4d6bc7409b5f675f1fc277316d08ce5e9ea6ef1a5fc"
+          },
+          "/api/v1/startups": {
+            "status": 200,
+            "sha256": "d534731317e18772b9b62fe1c584976f6502283ecf5f437b8ebf328ec115813f"
+          },
+          "/api/v1/products": {
+            "status": 200,
+            "sha256": "741a9d05468060f9a92f5e196a5e554465aff7e88a33974de49b4451e0a26fb0"
+          },
+          "/api/v1/papers": {
+            "status": 200,
+            "sha256": "5045e8fdbb2aaf61a089bb40e2cafa92ce93d48ab77457db938b79c4b869d1eb"
+          },
+          "/api/v1/jobs": {
+            "status": 200,
+            "sha256": "2c1f5b3c1335815cf1d47bb326d1a21d443f6fd837ae872c50a643670ef6e544"
+          },
+          "/api/v1/news": {
+            "status": 200,
+            "sha256": "2e87630602481d301730891f82f8752a7892c38064238e1545cfe59c79cd4382"
+          },
+          "/api/v1/intelligence/brief": {
+            "status": 200,
+            "sha256": "b412d612ab8ee48e3bb14eaf866adf3801a9432079743aca3cd8a9e59b2b4765"
+          },
+          "/api/v1/intelligence/topics": {
+            "status": 200,
+            "sha256": "f9088bb2d8db246afdedc952db9c433162c4e332b8c78dc6dd02da3406e4d7ba"
+          },
+          "/api/v1/relationships/overview": {
+            "status": 200,
+            "sha256": "5fb26256f88c222300c9df76c6ea219400653acb520b579812c60e81a3ec333f"
+          },
+          "/api/v1/operations/ingestion-runs": {
+            "status": 200,
+            "sha256": "58b17cdfeff93487f0d6ede69ff11f04e742f1883fb8257510ebe7ad56dd5500"
+          }
+        }
+      },
+      "seconds": 6.891
+    },
+    {
+      "step": 15,
+      "name": "Rollback rehearsal 1: downgrade 0001_baseline + stamp --purge base",
+      "ok": true,
+      "details": {
+        "existing_tables_match_original": true,
+        "diff": [],
+        "history_tables_left": [],
+        "alembic_version_rows": 0,
+        "file": {
+          "path": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\rollback_schema.db",
+          "sha256": "0b827568efd9ea6db0681bbf3a161a53aab7ca98ef77c633beefc587b85ba1e9",
+          "bytes": 41025536,
+          "mtime_ns": 1795367783912224400
+        }
+      },
+      "seconds": 0.275
+    },
+    {
+      "step": 16,
+      "name": "Rollback rehearsal 2: full restore of the cold copy over a migrated copy (byte-identical)",
+      "ok": true,
+      "details": {
+        "restore": {
+          "ok": true,
+          "from": "C:\\FrontierAtlas-backups\\phase7b-rehearsal-20261122T171614Z\\platform.pre7b.cold.db",
+          "to": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\rollback_full.db",
+          "previous_file_kept_as": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\rollback_full.failed-20261122T171624Z.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "expected_sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "integrity": "ok"
+        },
+        "byte_identical_to_original_live": true,
+        "fingerprints_match": true
+      },
+      "seconds": 0.22
+    },
+    {
+      "step": 17,
+      "name": "Measurements: database size and backfill time",
+      "ok": true,
+      "details": {
+        "live_bytes": 19185664,
+        "after_upgrade_bytes": 19349504,
+        "after_backfill_bytes": 41025536,
+        "growth_bytes": 21839872,
+        "after_backfill_mib": 39.12,
+        "backfill_seconds": 0.162,
+        "rehearsal_target": {
+          "path": "C:\\FrontierAtlas-test\\phase7b-rehearsal-20261122T171614Z\\platform.db",
+          "sha256": "953810ad6dff50d2cf5692adbe96aff96188177ec124ad17af4d11e35588b631",
+          "bytes": 41025536,
+          "mtime_ns": 1795367776280696100
+        }
+      },
+      "seconds": 0.047
+    },
+    {
+      "step": 18,
+      "name": "Live database unchanged (SHA-256, size, mtime) and still not registered with Alembic",
+      "ok": true,
+      "details": {
+        "start": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795277344837342000
+        },
+        "end": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "67e9335b6b257682357a60476b7d27690dcacff730d7bc12544c80b3801ac16d",
+          "bytes": 19185664,
+          "mtime_ns": 1795277344837342000
+        },
+        "live_registered_with_alembic": false
+      },
+      "seconds": 0.022
+    }
+  ]
+}

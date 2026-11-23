@@ -1,0 +1,145 @@
+{
+  "checked_at": "2026-11-21T12:44:41Z",
+  "checks": [
+    {
+      "integration": ".env loading",
+      "required_by_pipeline": "configuration",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "loaded; blank values treated as unset: ['deepseek_api_key', 'groq_api_key']",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "GitHub API",
+      "required_by_pipeline": "research stars (refresh-stars)",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "core limit 5000/h, remaining 5000",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Hugging Face Hub",
+      "required_by_pipeline": "products, orgs, papers",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "token valid (whoami-v2 HTTP 200); anonymous API HTTP 200",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Gemini",
+      "required_by_pipeline": "LLM tier 1",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "model gemini-3.1-flash-lite: live minimal generation OK [transient:ProviderTimeoutError, ok] AND production extraction OK ({'pricing_model': 'FREEMIUM'}, VERIFIED); api_calls=3",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Groq",
+      "required_by_pipeline": "LLM fallback (Groq)",
+      "credential_configured": false,
+      "connectivity_verified": false,
+      "result": "SKIP",
+      "detail": "GROQ_API_KEY empty",
+      "corrective_action": "Optional: set GROQ_API_KEY to enable this fallback tier",
+      "category": "MISSING_CREDENTIALS"
+    },
+    {
+      "integration": "DeepSeek",
+      "required_by_pipeline": "LLM fallback (DeepSeek)",
+      "credential_configured": false,
+      "connectivity_verified": false,
+      "result": "SKIP",
+      "detail": "DEEPSEEK_API_KEY empty",
+      "corrective_action": "Optional: set DEEPSEEK_API_KEY to enable this fallback tier",
+      "category": "MISSING_CREDENTIALS"
+    },
+    {
+      "integration": "Product Hunt API",
+      "required_by_pipeline": "products",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "FAIL",
+      "detail": "HTTP 401: Product Hunt rejected PRODUCTHUNT_TOKEN (error code: invalid_oauth_token); the API itself is reachable. A valid Developer Token is required; no Product Hunt data can be collected until then",
+      "corrective_action": "At api.producthunt.com/v2/oauth/applications open your app and copy the 'Developer Token' (not API Key / API Secret); if it was regenerated, update PRODUCTHUNT_TOKEN",
+      "category": "AUTH_FAILED"
+    },
+    {
+      "integration": "Google service account",
+      "required_by_pipeline": "Sheets export",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "OAuth token issued for <service-account-redacted>",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Google Sheets API",
+      "required_by_pipeline": "Sheets export",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "spreadsheet 'AI Intelligence Platform' readable; service account has Editor (canEdit=true); anyone-with-link access: off",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Google Drive API",
+      "required_by_pipeline": "public sharing",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "enabled; SA storage limit=0",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Primary DB (sqlite)",
+      "required_by_pipeline": "all persistence",
+      "credential_configured": true,
+      "connectivity_verified": true,
+      "result": "PASS",
+      "detail": "connected; records {'JOB': 93, 'NEWS': 16, 'PRODUCT': 1800, 'RESEARCH_PAPER': 2290, 'STARTUP': 2509}",
+      "corrective_action": "",
+      "category": "AUTHENTICATED"
+    },
+    {
+      "integration": "Redis",
+      "required_by_pipeline": "distributed dedup, Celery (multi-node only)",
+      "credential_configured": false,
+      "connectivity_verified": false,
+      "result": "SKIP",
+      "detail": "REDIS_URL unset -> in-process dedup (single node)",
+      "corrective_action": "Only needed for multi-worker deployments (docker compose)",
+      "category": "MISSING_CREDENTIALS"
+    },
+    {
+      "integration": "Qdrant",
+      "required_by_pipeline": "optional (documented projection; not used by the ingestion pipeline)",
+      "credential_configured": true,
+      "connectivity_verified": false,
+      "result": "N/A",
+      "detail": "not reachable at qdrant:6333 (gaierror); hostname is the docker-compose service name",
+      "corrective_action": "Not required to run or evaluate the pipeline; start with: docker compose --profile graph up -d",
+      "category": "NOT_REQUIRED"
+    },
+    {
+      "integration": "Neo4j",
+      "required_by_pipeline": "optional (documented projection; not used by the ingestion pipeline)",
+      "credential_configured": true,
+      "connectivity_verified": false,
+      "result": "N/A",
+      "detail": "not reachable at neo4j:7687 (gaierror); hostname is the docker-compose service name",
+      "corrective_action": "Not required to run or evaluate the pipeline; start with: docker compose --profile graph up -d",
+      "category": "NOT_REQUIRED"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "stamp": "20261123T083552Z",
+  "production_path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+  "checks": {
+    "no_writer": {
+      "ok": true,
+      "side_files": [],
+      "ports_open": {
+        "8000": false,
+        "3000": false
+      },
+      "mtime_stable_5s": true
+    },
+    "backups": {
+      "dir": "C:\\FrontierAtlas-backups\\activation-20261123T083552Z",
+      "outside_onedrive": true,
+      "cold": {
+        "path": "C:\\FrontierAtlas-backups\\activation-20261123T083552Z\\platform.pre-activation.cold.db",
+        "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+        "sha_matches_production": true,
+        "integrity": "ok",
+        "fk": 0
+      },
+      "online": {
+        "path": "C:\\FrontierAtlas-backups\\activation-20261123T083552Z\\platform.pre-activation.online.db",
+        "sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+        "integrity": "ok",
+        "fk": 0,
+        "row_counts_match": true,
+        "revision_matches": true
+      },
+      "ok": true
+    },
+    "production_integrity": {
+      "ok": true
+    },
+    "selected_sources_usable": {
+      "ok": true,
+      "blocked": []
+    },
+    "production_unchanged": {
+      "ok": true,
+      "sha256_after": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff"
+    }
+  },
+  "production_writes": "none (read-only)",
+  "before": {
+    "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "bytes": 41025536,
+    "alembic_revision": "0002_history_tables",
+    "integrity": "ok",
+    "foreign_key_violations": 0,
+    "row_counts": {
+      "alembic_version": 1,
+      "canonical_entities": 62,
+      "catalogue_scans": 0,
+      "claims": 0,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entities": 0,
+      "entity_mappings": 4944,
+      "entity_resolution_events": 0,
+      "evidence_links": 0,
+      "ingestion_batches": 1,
+      "metric_snapshots": 0,
+      "presence_events": 0,
+      "record_observations": 6708,
+      "record_versions": 6708,
+      "records": 6708,
+      "seen_items": 0,
+      "source_groups": 0,
+      "source_reliability_daily": 0,
+      "source_runs": 42
+    }
+  },
+  "config": {
+    "history_enabled": true,
+    "api_read_only": true
+  },
+  "sources": {
+    "techcrunch_ai": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:04.063768",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "theverge_ai": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:06:43.996109",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "mit_tr_ai": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:06:32.669435",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "arstechnica_ai": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "PARTIAL",
+      "last_finished": "2026-11-21 11:07:15.993064",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "openai_news": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:06:40.672931",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "greenhouse": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:37.538074",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "ashby": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:32.366704",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "lever": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:40.389573",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "remoteok": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:33.574447",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "himalayas": {
+      "selected": true,
+      "excluded_reason": null,
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:57.846144",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "marktechpost": {
+      "selected": false,
+      "excluded_reason": "INACCESSIBLE in the 2026-11-23 rehearsal",
+      "last_status": "OK",
+      "last_finished": "2026-11-21 11:07:28.003091",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "venturebeat_ai": {
+      "selected": false,
+      "excluded_reason": "last run FAILED",
+      "last_status": "FAILED",
+      "last_finished": "2026-11-21 11:06:40.122015",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "producthunt": {
+      "selected": false,
+      "excluded_reason": "credential rejected",
+      "last_status": "INACCESSIBLE",
+      "last_finished": "2026-11-21 09:28:04.395899",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    },
+    "the_decoder": {
+      "selected": false,
+      "excluded_reason": "disabled",
+      "last_status": "INACCESSIBLE",
+      "last_finished": "2026-11-21 11:06:41.349942",
+      "credential_rejected": false,
+      "cooldown_until": null,
+      "cooldown_active": false
+    }
+  },
+  "ready": true
+}

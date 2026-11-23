@@ -1,0 +1,143 @@
+{
+  "stamp": "20261123T080201Z",
+  "copy": "C:\\FrontierAtlas-test\\activation-dryrun-20261123T080201Z\\platform.db",
+  "sources": [
+    "techcrunch_ai",
+    "theverge_ai",
+    "mit_tr_ai",
+    "arstechnica_ai",
+    "openai_news",
+    "greenhouse",
+    "ashby",
+    "lever",
+    "remoteok",
+    "himalayas"
+  ],
+  "exit_codes": {
+    "collect": 0,
+    "sync_evidence": 0
+  },
+  "delta_collect": {
+    "entity_mappings": 54,
+    "ingestion_batches": 1,
+    "presence_events": 60,
+    "record_observations": 61,
+    "record_versions": 61,
+    "records": 60,
+    "source_runs": 10
+  },
+  "delta_sync_evidence": {
+    "claims": 8675,
+    "entities": 2603,
+    "entity_resolution_events": 4991,
+    "evidence_links": 8751
+  },
+  "tables_modified_by_collect": [
+    "crawl_checkpoints",
+    "entity_mappings",
+    "ingestion_batches",
+    "presence_events",
+    "record_observations",
+    "record_versions",
+    "records",
+    "source_runs"
+  ],
+  "tables_modified_by_sync_evidence": [
+    "claims",
+    "entities",
+    "entity_resolution_events",
+    "evidence_links"
+  ],
+  "source_availability": [
+    {
+      "source": "techcrunch_ai",
+      "status": "OK",
+      "fetched": 20,
+      "stored": 3
+    },
+    {
+      "source": "theverge_ai",
+      "status": "OK",
+      "fetched": 10,
+      "stored": 3
+    },
+    {
+      "source": "mit_tr_ai",
+      "status": "OK",
+      "fetched": 10,
+      "stored": 0
+    },
+    {
+      "source": "arstechnica_ai",
+      "status": "OK",
+      "fetched": 20,
+      "stored": 0
+    },
+    {
+      "source": "openai_news",
+      "status": "OK",
+      "fetched": 1422,
+      "stored": 0
+    },
+    {
+      "source": "greenhouse",
+      "status": "OK",
+      "fetched": 1994,
+      "stored": 3
+    },
+    {
+      "source": "ashby",
+      "status": "OK",
+      "fetched": 1810,
+      "stored": 9
+    },
+    {
+      "source": "lever",
+      "status": "OK",
+      "fetched": 552,
+      "stored": 0
+    },
+    {
+      "source": "remoteok",
+      "status": "OK",
+      "fetched": 100,
+      "stored": 0
+    },
+    {
+      "source": "himalayas",
+      "status": "OK",
+      "fetched": 500,
+      "stored": 43
+    }
+  ],
+  "batches": [
+    [
+      "baseline_backfill",
+      "completed"
+    ],
+    [
+      "manual",
+      "completed"
+    ]
+  ],
+  "copy_integrity": "ok",
+  "copy_fk_violations": 0,
+  "llm_calls": {},
+  "hosts_contacted": {
+    "techcrunch.com": 5,
+    "www.theverge.com": 5,
+    "www.technologyreview.com": 2,
+    "arstechnica.com": 2,
+    "openai.com": 2,
+    "boards-api.greenhouse.io": 6,
+    "api.ashbyhq.com": 7,
+    "api.lever.co": 4,
+    "remoteok.com": 2,
+    "himalayas.app": 26
+  },
+  "llm_hosts_contacted": [],
+  "production_sha256_before": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+  "production_sha256_after": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+  "production_unchanged": true,
+  "result": "PASS"
+}

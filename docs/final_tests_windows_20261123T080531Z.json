@@ -1,0 +1,70 @@
+﻿{
+    "stamp":  "20261123T080531Z",
+    "overall":  "PASS",
+    "live_sha256_before":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_sha256_after":  "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+    "live_unchanged":  true,
+    "frontend_copy":  "C:\\FrontierAtlas-test\\fe-build-20261123T080531Z",
+    "steps":  {
+                  "backend_pytest":  {
+                                         "started_utc":  "2026-11-23T08:05:31.2908705Z",
+                                         "exit_code":  0,
+                                         "seconds":  44.9,
+                                         "result":  "PASS"
+                                     },
+                  "backend_ruff":  {
+                                       "started_utc":  "2026-11-23T08:06:16.2383890Z",
+                                       "exit_code":  0,
+                                       "seconds":  0.1,
+                                       "result":  "PASS"
+                                   },
+                  "migration_test_pre7b_backup_copy":  {
+                                                           "started_utc":  "2026-11-23T08:06:16.4278409Z",
+                                                           "exit_code":  0,
+                                                           "seconds":  3.7,
+                                                           "result":  "PASS"
+                                                       },
+                  "migration_post7b_schema_on_copy":  {
+                                                          "started_utc":  "2026-11-23T08:06:20.1309811Z",
+                                                          "exit_code":  0,
+                                                          "seconds":  1.1,
+                                                          "result":  "PASS"
+                                                      },
+                  "database_safety_backup_rollback":  {
+                                                          "started_utc":  "2026-11-23T08:06:21.2343637Z",
+                                                          "exit_code":  0,
+                                                          "seconds":  9.6,
+                                                          "result":  "PASS"
+                                                      },
+                  "security_check":  {
+                                         "started_utc":  "2026-11-23T08:06:30.8469621Z",
+                                         "exit_code":  0,
+                                         "seconds":  24.1,
+                                         "result":  "PASS"
+                                     },
+                  "activation_dry_run_disposable_copy":  {
+                                                             "started_utc":  "2026-11-23T08:06:54.9272249Z",
+                                                             "exit_code":  0,
+                                                             "seconds":  60.5,
+                                                             "result":  "PASS"
+                                                         },
+                  "frontend_typecheck":  {
+                                             "started_utc":  "2026-11-23T08:08:21.5168331Z",
+                                             "exit_code":  0,
+                                             "seconds":  7,
+                                             "result":  "PASS"
+                                         },
+                  "frontend_eslint":  {
+                                          "started_utc":  "2026-11-23T08:08:28.4855461Z",
+                                          "exit_code":  0,
+                                          "seconds":  14.4,
+                                          "result":  "PASS"
+                                      },
+                  "frontend_production_build":  {
+                                                    "started_utc":  "2026-11-23T08:08:42.9189009Z",
+                                                    "exit_code":  0,
+                                                    "seconds":  18.1,
+                                                    "result":  "PASS"
+                                                }
+              }
+}

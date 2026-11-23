@@ -1,0 +1,224 @@
+{
+  "run_at": "2026-11-21T13:19:54Z",
+  "configured_chain": [
+    "gemini"
+  ],
+  "checks": [
+    {
+      "check": "1_direct_extraction_product_pricing",
+      "ok": true,
+      "live": true,
+      "proves": "live generation + JSON parsing + evidence validation on the configured primary",
+      "seconds": 100.9,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 1,
+      "chunks_failed": 0,
+      "status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {
+        "pricing_model": "FREEMIUM"
+      },
+      "evidence": {
+        "pricing_model": "Atlas is free to start; upgrade to the Pro plan for $20/month."
+      },
+      "rejected": {},
+      "attempts": [
+        "gemini:unavailable",
+        "gemini:ok"
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T12:44:42Z"
+    },
+    {
+      "check": "2_forced_fallback_invalid_primary_key",
+      "ok": true,
+      "live": true,
+      "proves": "real Google auth failure for an invalid key is classified and the chain falls back",
+      "seconds": 63.58,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 1,
+      "chunks_failed": 0,
+      "status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {
+        "pricing_model": "FREEMIUM"
+      },
+      "evidence": {
+        "pricing_model": "Atlas is free to start; upgrade to the Pro plan for $20/month."
+      },
+      "rejected": {},
+      "attempts": [
+        "gemini_invalid_key:client_error",
+        "gemini:unavailable",
+        "gemini:ok"
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T12:44:42Z"
+    },
+    {
+      "check": "5_real_groq_deepseek_auth_failures_then_fallback",
+      "ok": true,
+      "live": true,
+      "proves": "real Groq + DeepSeek HTTP auth failures handled, then fallback to a working provider",
+      "seconds": 8.61,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 1,
+      "chunks_failed": 0,
+      "status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {
+        "pricing_model": "FREEMIUM"
+      },
+      "evidence": {
+        "pricing_model": "Atlas is free to start; upgrade to the Pro plan for $20/month."
+      },
+      "rejected": {},
+      "attempts": [
+        "groq_invalid_key:client_error",
+        "deepseek_invalid_key:client_error",
+        "gemini:unavailable",
+        "gemini:unavailable",
+        "gemini:ok"
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T12:44:42Z"
+    },
+    {
+      "check": "3_forced_chunking_1500_token_budget",
+      "ok": true,
+      "live": true,
+      "proves": "live multi-chunk extraction with deterministic merge",
+      "seconds": 40.3,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 5,
+      "chunks_failed": 0,
+      "status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {
+        "organizations": [
+          "Baseten",
+          "Google",
+          "Hugging Face",
+          "Liquid AI",
+          "Base Labs",
+          "Liquid"
+        ]
+      },
+      "evidence": {
+        "organizations": "Baseten has released bison-1 | built on Google\u2019s Gemma 4 | plus open BF16 weights on Hugging Face | Liquid AI\u2019s d1.2-ultra | Base Labs \u00b7 Baseten | Baseten has r"
+      },
+      "rejected": {},
+      "attempts": [
+        "gemini:unavailable",
+        "gemini:ok",
+        "gemini:ok",
+        "gemini:unavailable",
+        "gemini:ok",
+        "gemini:ok",
+        "gemini:ok"
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T12:44:42Z"
+    },
+    {
+      "check": "4_hallucination_probe_fields_absent",
+      "ok": true,
+      "live": true,
+      "proves": "absent facts stay null (no invention) on a live model",
+      "seconds": 1.55,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 1,
+      "chunks_failed": 0,
+      "extraction_status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {},
+      "evidence": {},
+      "rejected": {},
+      "attempts": [
+        "gemini:ok"
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T12:55:53Z"
+    },
+    {
+      "check": "1b_direct_extraction_real_news_entities",
+      "ok": true,
+      "live": true,
+      "proves": "live extraction on a real stored article",
+      "seconds": 2.9,
+      "providers_used": [
+        "gemini"
+      ],
+      "chunks_total": 1,
+      "chunks_failed": 0,
+      "extraction_status": "VERIFIED",
+      "confidence": 1.0,
+      "accepted": {
+        "organizations": [
+          "Baseten",
+          "Google",
+          "Liquid AI",
+          "Hugging Face"
+        ]
+      },
+      "evidence": {
+        "organizations": "Baseten has released bison-1 and groundhog-1 | built on Google\u2019s Gemma 4 | 1 point above Liquid AI\u2019s d1.2-ultra | plus open BF16 weights on Hugging Face"
+      },
+      "rejected": {},
+      "attempts": [
+        "gemini:ok"
+      ],
+      "diagnostic": [
+        {
+          "chunk": 0,
+          "provider": "gemini",
+          "outcome": "ok",
+          "detail": "in=10072 out=110 verdicts={'organizations': 'verified 4/4'}",
+          "raw_response": "{\n  \"fields\": {\n    \"organizations\": {\n      \"value\": [\n        \"Baseten\",\n        \"Google\",\n        \"Liquid AI\",\n        \"Hugging Face\"\n      ],\n      \"evidence\": \"Baseten has released bison-1 and groundhog-1 | built on Google\u2019s Gemma 4 | 1 point above Liquid AI\u2019s d1.2-ultra | plus open BF16 weights on Hugging Face\"\n    }\n  }\n}"
+        }
+      ],
+      "check_status": "PASS",
+      "run_at": "2026-11-21T13:19:54Z"
+    },
+    {
+      "check": "6_fallback_to_groq",
+      "ok": null,
+      "check_status": "NOT_CONFIGURED",
+      "live": false,
+      "proves": "real successful fallback to groq",
+      "error": "GROQ_API_KEY not set (optional provider)",
+      "run_at": "2026-11-21T13:19:54Z"
+    },
+    {
+      "check": "6_fallback_to_deepseek",
+      "ok": null,
+      "check_status": "NOT_CONFIGURED",
+      "live": false,
+      "proves": "real successful fallback to deepseek",
+      "error": "DEEPSEEK_API_KEY not set (optional provider)",
+      "run_at": "2026-11-21T13:19:54Z"
+    }
+  ],
+  "news_source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models",
+  "cross_vendor_success_fallback": {
+    "groq": "NOT VERIFIED live: no API key configured (verified only with mocked HTTP in tests)",
+    "deepseek": "NOT VERIFIED live: no API key configured (verified only with mocked HTTP in tests)"
+  },
+  "merged_from_previous_run": "2026-11-21T13:06:50Z",
+  "summary": {
+    "PASS": 6,
+    "FAIL": 0,
+    "UNAVAILABLE_TRANSIENT": 0,
+    "NOT_CONFIGURED": 2
+  }
+}

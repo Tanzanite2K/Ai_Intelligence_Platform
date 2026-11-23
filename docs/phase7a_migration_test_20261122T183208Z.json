@@ -1,0 +1,733 @@
+{
+  "report": "phase7a_migration_test",
+  "stamp": "20261122T183208Z",
+  "result": "FAIL",
+  "passed": 4,
+  "total": 16,
+  "source": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+  "workdir": "C:\\FrontierAtlas-test",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Pre-flight: work folder outside OneDrive and project; record live database checksum",
+      "ok": true,
+      "details": {
+        "live_database": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+          "bytes": 41025536,
+          "mtime_ns": 1795368496108282200
+        },
+        "workdir": "C:\\FrontierAtlas-test\\phase7a-20261122T183208Z",
+        "python": "3.13.12",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "sqlite": "3.50.4",
+        "sqlalchemy": "2.0.41",
+        "alembic": "1.20.1",
+        "live_opened": "read-only (mode=ro), SQLite online backup API only"
+      },
+      "seconds": 0.483
+    },
+    {
+      "step": 2,
+      "name": "Verified backup of the live database (online backup API)",
+      "ok": true,
+      "details": {
+        "backup": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T183208Z\\backup_pre_migration.db",
+          "sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+          "bytes": 41025536,
+          "mtime_ns": 1795372328855468500
+        },
+        "source_integrity": "ok",
+        "backup_integrity": "ok",
+        "row_counts": {
+          "canonical_entities": 62,
+          "crawl_checkpoints": 18,
+          "dead_letters": 16,
+          "entity_mappings": 4944,
+          "records": 6708,
+          "seen_items": 0,
+          "source_runs": 42
+        }
+      },
+      "seconds": 0.338
+    },
+    {
+      "step": 3,
+      "name": "Working copy identical to the backup; baseline fingerprint of the 7 existing tables",
+      "ok": false,
+      "details": {
+        "work_copy": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T183208Z\\work.db",
+          "sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+          "bytes": 41025536,
+          "mtime_ns": 1795372328855468500
+        },
+        "tables": [
+          "alembic_version",
+          "canonical_entities",
+          "catalogue_scans",
+          "claims",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entities",
+          "entity_mappings",
+          "entity_resolution_events",
+          "evidence_links",
+          "ingestion_batches",
+          "metric_snapshots",
+          "presence_events",
+          "record_observations",
+          "record_versions",
+          "records",
+          "seen_items",
+          "source_groups",
+          "source_reliability_daily",
+          "source_runs"
+        ],
+        "fingerprint": {
+          "canonical_entities": {
+            "ddl_sha256": "555db18ed29f9d1154d0b4682809a55970ce2f89be2e85a28c96aea20297c29b",
+            "index_ddl": [
+              "CREATE INDEX ix_canonical_entities_domain ON canonical_entities (domain)"
+            ],
+            "rows": 62,
+            "data_sha256": "1944fee00c4c4f1a8cc48a72377cbdd59fceafb0bdf2f8d5a5b0fba5d31f348e"
+          },
+          "crawl_checkpoints": {
+            "ddl_sha256": "02bee9fea3d3a161e66d5ee0fe43833d6de78fbe76a4e8e384ed1dbb01b6bf5c",
+            "index_ddl": [],
+            "rows": 18,
+            "data_sha256": "8d76c3fed136d2015c5ce1f229a80ee5ecbd16a187a972668aaba2b459ffaea9"
+          },
+          "dead_letters": {
+            "ddl_sha256": "c99260a20d2e42cc11e34cc4ffdf38a0fa52ab5a3e87e76317e4c0ce9642e664",
+            "index_ddl": [
+              "CREATE INDEX ix_dead_letters_stage ON dead_letters (stage)"
+            ],
+            "rows": 16,
+            "data_sha256": "fdb8ba4047026c8bf9aad36e20b42e7240f234fc68cd7a66380c0b3c7e1d8cbf"
+          },
+          "entity_mappings": {
+            "ddl_sha256": "8e0a1a7d6e7b88a0079957e1d341550bd63232ddd4178e6110f918f20854cb63",
+            "index_ddl": [
+              "CREATE INDEX ix_entity_mapping_review ON entity_mappings (needs_review)"
+            ],
+            "rows": 4944,
+            "data_sha256": "c1f09b57d4fba21a56904510c41abfb5d18623758075aacfd7d73c380006d9d0"
+          },
+          "records": {
+            "ddl_sha256": "9c5a8ae758beef5fbd25f593f7a9be18448503677b6091c5cea9eccdbddd174a",
+            "index_ddl": [
+              "CREATE INDEX ix_records_content_hash ON records (content_hash)",
+              "CREATE INDEX ix_records_source ON records (source_name)",
+              "CREATE INDEX ix_records_type_entity ON records (record_type, entity_name)",
+              "CREATE INDEX ix_records_type_published ON records (record_type, published_at)"
+            ],
+            "rows": 6708,
+            "data_sha256": "7131a176a486f55434b71ba6a06f33c3f0ebdd27d284b48d7651c715273d3213"
+          },
+          "seen_items": {
+            "ddl_sha256": "c05d907d5feb6b594f9f10b177a995c34826f43c043d6337be0fda32908ab481",
+            "index_ddl": [
+              "CREATE INDEX ix_seen_items_source ON seen_items (source)"
+            ],
+            "rows": 0,
+            "data_sha256": "6d6dec6051ebc8d5bc73e797a01a37a31f598b7d2467d826fb8b7e701e50c807"
+          },
+          "source_runs": {
+            "ddl_sha256": "fb40dc4adb00404be7a40f6e035eb37ddfccf9d56e9514c68435e6e054674ed4",
+            "index_ddl": [
+              "CREATE INDEX ix_source_runs_source ON source_runs (source)"
+            ],
+            "rows": 42,
+            "data_sha256": "1412d6d0eb3f55fde33a16fd5f85b96fd4eb107f84ca467a379b3cab0898d76b"
+          }
+        }
+      },
+      "seconds": 0.148
+    },
+    {
+      "step": 4,
+      "name": "Schema check: revision 0001 DDL == existing DDL, and ORM models == existing schema",
+      "ok": false,
+      "details": {
+        "ddl_differences": {},
+        "orm_vs_existing_differences": [
+          "('remove_index', Index('ix_record_observations_record', Column('record_type', VARCHAR(length=32), table=<record_observations>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<record_observations>, nullable=False), Column('observed_at', DATETIME(), table=<record_observations>, nullable=False)))",
+          "('remove_index', Index('ix_record_observations_source', Column('source_name', VARCHAR(length=200), table=<record_observations>, nullable=False), Column('observed_at', DATETIME(), table=<record_observations>, nullable=False)))",
+          "('remove_table', Table('record_observations', MetaData(), Column('id', INTEGER(), table=<record_observations>, primary_key=True, nullable=False), Column('batch_id', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<record_observations>, nullable=False), Column('source_name', VARCHAR(length=200), table=<record_observations>, nullable=False), Column('record_type', VARCHAR(length=32), table=<record_observations>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<record_observations>, nullable=False), Column('observed_at', DATETIME(), table=<record_observations>, nullable=False), Column('content_hash', VARCHAR(length=64), table=<record_observations>, nullable=False), Column('published_at', DATETIME(), table=<record_observations>), Column('observation_origin', VARCHAR(length=24), table=<record_observations>, nullable=False), schema=None))",
+          "('remove_index', Index('ix_evidence_links_claim_group', Column('claim_id', VARCHAR(length=36), table=<evidence_links>, nullable=False), Column('source_group', VARCHAR(length=64), table=<evidence_links>, nullable=False)))",
+          "('remove_table', Table('evidence_links', MetaData(), Column('id', INTEGER(), table=<evidence_links>, primary_key=True, nullable=False), Column('claim_id', VARCHAR(length=36), ForeignKey('claims.claim_id'), table=<evidence_links>, nullable=False), Column('record_type', VARCHAR(length=32), ForeignKey('record_versions.record_type'), table=<evidence_links>, nullable=False), Column('dedup_hash', VARCHAR(length=64), ForeignKey('record_versions.dedup_hash'), table=<evidence_links>, nullable=False), Column('version_no', INTEGER(), ForeignKey('record_versions.version_no'), table=<evidence_links>, nullable=False), Column('source_name', VARCHAR(length=200), table=<evidence_links>, nullable=False), Column('source_group', VARCHAR(length=64), table=<evidence_links>, nullable=False), Column('primary_url', TEXT(), table=<evidence_links>), Column('content_fingerprint', VARCHAR(length=64), table=<evidence_links>), Column('snippet', TEXT(), table=<evidence_links>, nullable=False), Column('evidence_kind', VARCHAR(length=16), table=<evidence_links>, nullable=False), schema=None))",
+          "('remove_index', Index('ix_entities_domain', Column('domain', VARCHAR(length=255), table=<entities>)))",
+          "('remove_index', Index('ux_entities_active_key', Column('normalized_key', VARCHAR(length=300), table=<entities>, nullable=False), unique=True))",
+          "('remove_table', Table('entities', MetaData(), Column('entity_id', VARCHAR(length=36), table=<entities>, primary_key=True, nullable=False), Column('canonical_name', VARCHAR(length=300), table=<entities>, nullable=False), Column('normalized_key', VARCHAR(length=300), table=<entities>, nullable=False), Column('domain', VARCHAR(length=255), table=<entities>), Column('origin', VARCHAR(length=16), table=<entities>, nullable=False), Column('first_observed_batch', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<entities>), Column('status', VARCHAR(length=16), table=<entities>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A4A2190>, for_update=False)), Column('merged_into', VARCHAR(length=36), ForeignKey('entities.entity_id'), table=<entities>), Column('created_at', DATETIME(), table=<entities>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A42FA00>, for_update=False)), schema=None))",
+          "('remove_index', Index('ix_entity_resolution_entity', Column('entity_id', VARCHAR(length=36), table=<entity_resolution_events>, nullable=False)))",
+          "('remove_index', Index('ux_entity_resolution_open', Column('raw_name', VARCHAR(length=300), table=<entity_resolution_events>, nullable=False), Column('source_url', TEXT(), table=<entity_resolution_events>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A4AD910>, for_update=False)), unique=True))",
+          "('remove_table', Table('entity_resolution_events', MetaData(), Column('id', INTEGER(), table=<entity_resolution_events>, primary_key=True, nullable=False), Column('entity_id', VARCHAR(length=36), ForeignKey('entities.entity_id'), table=<entity_resolution_events>, nullable=False), Column('raw_name', VARCHAR(length=300), table=<entity_resolution_events>, nullable=False), Column('source_url', TEXT(), table=<entity_resolution_events>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A4AD910>, for_update=False)), Column('method', VARCHAR(length=32), table=<entity_resolution_events>, nullable=False), Column('confidence', FLOAT(), table=<entity_resolution_events>, nullable=False), Column('decided_by', VARCHAR(length=16), table=<entity_resolution_events>, nullable=False), Column('resolver_version', VARCHAR(length=32), table=<entity_resolution_events>, nullable=False), Column('decided_at', DATETIME(), table=<entity_resolution_events>, nullable=False), Column('superseded_at', DATETIME(), table=<entity_resolution_events>), schema=None))",
+          "('remove_index', Index('ix_metric_snapshots_series', Column('subject_kind', VARCHAR(length=32), table=<metric_snapshots>, nullable=False), Column('subject_key', VARCHAR(length=300), table=<metric_snapshots>, nullable=False), Column('metric', VARCHAR(length=64), table=<metric_snapshots>, nullable=False), Column('observed_at', DATETIME(), table=<metric_snapshots>, nullable=False)))",
+          "('remove_table', Table('metric_snapshots', MetaData(), Column('id', INTEGER(), table=<metric_snapshots>, primary_key=True, nullable=False), Column('subject_kind', VARCHAR(length=32), table=<metric_snapshots>, nullable=False), Column('subject_key', VARCHAR(length=300), table=<metric_snapshots>, nullable=False), Column('metric', VARCHAR(length=64), table=<metric_snapshots>, nullable=False), Column('value', FLOAT(), table=<metric_snapshots>, nullable=False), Column('observed_at', DATETIME(), table=<metric_snapshots>, nullable=False), Column('source_name', VARCHAR(length=200), table=<metric_snapshots>, nullable=False), Column('batch_id', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<metric_snapshots>, nullable=False), schema=None))",
+          "('remove_table', Table('source_reliability_daily', MetaData(), Column('source', VARCHAR(length=120), table=<source_reliability_daily>, primary_key=True, nullable=False), Column('day', DATE(), table=<source_reliability_daily>, primary_key=True, nullable=False), Column('runs', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A3DCCB0>, for_update=False)), Column('ok_runs', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A483D10>, for_update=False)), Column('complete_scans', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A483D70>, for_update=False)), Column('items_fetched', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A483DD0>, for_update=False)), Column('items_new', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A483E30>, for_update=False)), Column('median_latency_ms', INTEGER(), table=<source_reliability_daily>), Column('http_errors', INTEGER(), table=<source_reliability_daily>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A483E90>, for_update=False)), schema=None))",
+          "('remove_table', Table('source_groups', MetaData(), Column('source_name', VARCHAR(length=120), table=<source_groups>, primary_key=True, nullable=False), Column('source_group', VARCHAR(length=64), table=<source_groups>, nullable=False), Column('owner', VARCHAR(length=200), table=<source_groups>), Column('notes', TEXT(), table=<source_groups>), schema=None))",
+          "('remove_table', Table('catalogue_scans', MetaData(), Column('scan_id', VARCHAR(length=36), table=<catalogue_scans>, primary_key=True, nullable=False), Column('batch_id', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<catalogue_scans>, nullable=False), Column('source_name', VARCHAR(length=200), table=<catalogue_scans>, nullable=False), Column('pages_expected', INTEGER(), table=<catalogue_scans>), Column('pages_fetched', INTEGER(), table=<catalogue_scans>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A524050>, for_update=False)), Column('items_listed', INTEGER(), table=<catalogue_scans>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A5240B0>, for_update=False)), Column('complete', BOOLEAN(), table=<catalogue_scans>, nullable=False), Column('incomplete_reason', TEXT(), table=<catalogue_scans>), Column('finished_at', DATETIME(), table=<catalogue_scans>), schema=None))",
+          "('remove_index', Index('ix_presence_events_record', Column('record_type', VARCHAR(length=32), table=<presence_events>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<presence_events>, nullable=False), Column('observed_at', DATETIME(), table=<presence_events>, nullable=False)))",
+          "('remove_table', Table('presence_events', MetaData(), Column('id', INTEGER(), table=<presence_events>, primary_key=True, nullable=False), Column('record_type', VARCHAR(length=32), table=<presence_events>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<presence_events>, nullable=False), Column('source_name', VARCHAR(length=200), table=<presence_events>, nullable=False), Column('event', VARCHAR(length=16), table=<presence_events>, nullable=False), Column('batch_id', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<presence_events>, nullable=False), Column('scan_id', VARCHAR(length=36), ForeignKey('catalogue_scans.scan_id'), table=<presence_events>), Column('observed_at', DATETIME(), table=<presence_events>, nullable=False), schema=None))",
+          "('remove_table', Table('ingestion_batches', MetaData(), Column('batch_id', VARCHAR(length=36), table=<ingestion_batches>, primary_key=True, nullable=False), Column('trigger', VARCHAR(length=32), table=<ingestion_batches>, nullable=False), Column('scheduled_for', DATETIME(), table=<ingestion_batches>, nullable=False), Column('started_at', DATETIME(), table=<ingestion_batches>, nullable=False), Column('finished_at', DATETIME(), table=<ingestion_batches>), Column('status', VARCHAR(length=24), table=<ingestion_batches>, nullable=False), Column('code_version', VARCHAR(length=64), table=<ingestion_batches>), Column('notes', TEXT(), table=<ingestion_batches>), schema=None))",
+          "('remove_index', Index('ux_record_versions_open', Column('record_type', VARCHAR(length=32), table=<record_versions>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<record_versions>, nullable=False), unique=True))",
+          "('remove_table', Table('record_versions', MetaData(), Column('id', INTEGER(), table=<record_versions>, primary_key=True, nullable=False), Column('record_type', VARCHAR(length=32), table=<record_versions>, nullable=False), Column('dedup_hash', VARCHAR(length=64), table=<record_versions>, nullable=False), Column('version_no', INTEGER(), table=<record_versions>, nullable=False), Column('content_hash', VARCHAR(length=64), table=<record_versions>, nullable=False), Column('payload', JSON(), table=<record_versions>, nullable=False), Column('valid_from', DATETIME(), table=<record_versions>, nullable=False), Column('valid_to', DATETIME(), table=<record_versions>), Column('batch_id', VARCHAR(length=36), ForeignKey('ingestion_batches.batch_id'), table=<record_versions>, nullable=False), Column('version_origin', VARCHAR(length=24), table=<record_versions>, nullable=False), Column('changed_fields', JSON(), table=<record_versions>), schema=None))",
+          "('remove_index', Index('ix_claims_subject', Column('subject_entity_id', VARCHAR(length=36), table=<claims>, nullable=False), Column('predicate', VARCHAR(length=48), table=<claims>, nullable=False)))",
+          "('remove_table', Table('claims', MetaData(), Column('claim_id', VARCHAR(length=36), table=<claims>, primary_key=True, nullable=False), Column('claim_kind', VARCHAR(length=48), table=<claims>, nullable=False), Column('subject_entity_id', VARCHAR(length=36), ForeignKey('entities.entity_id'), table=<claims>, nullable=False), Column('predicate', VARCHAR(length=48), table=<claims>, nullable=False), Column('object_kind', VARCHAR(length=32), table=<claims>, nullable=False), Column('object_key', VARCHAR(length=300), table=<claims>, nullable=False), Column('value', TEXT(), table=<claims>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A524710>, for_update=False)), Column('first_observed_at', DATETIME(), table=<claims>, nullable=False), Column('last_observed_at', DATETIME(), table=<claims>, nullable=False), Column('support_tier', VARCHAR(length=16), table=<claims>, nullable=False), Column('independent_groups', INTEGER(), table=<claims>, nullable=False, server_default=DefaultClause(<sqlalchemy.sql.elements.TextClause object at 0x000001DE6A524770>, for_update=False)), schema=None))"
+        ],
+        "fresh_db_revision": "0001_baseline",
+        "tables_compared": [
+          "canonical_entities",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entity_mappings",
+          "records",
+          "seen_items",
+          "source_runs"
+        ]
+      },
+      "seconds": 0.263
+    },
+    {
+      "step": 5,
+      "name": "Safety: 'upgrade 0001' on the existing database is refused (tables exist)",
+      "ok": false,
+      "details": {
+        "refused": false,
+        "message": "",
+        "existing_tables_unchanged": true,
+        "diff": []
+      },
+      "seconds": 0.109
+    },
+    {
+      "step": 6,
+      "name": "stamp 0001_baseline on the existing copy",
+      "ok": false,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": []
+      },
+      "seconds": 0.248
+    },
+    {
+      "step": 7,
+      "name": "upgrade head (0002_history_tables): 12 new empty tables, existing tables unchanged",
+      "ok": false,
+      "details": {
+        "error": "OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\base.py\", line 1963, in _exec_single_context\n    self.dialect.do_execute(\n    ~~~~~~~~~~~~~~~~~~~~~~~^\n        cursor, str_statement, effective_parameters, context\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\default.py\", line 943, in do_execute\n    cursor.execute(statement, parameters)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 149, in execute\n    self._adapt_connection._handle_exception(error)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 300, in _handle_exception\n    raise error\nsqlite3.OperationalError: table ingestion_batches already exists\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 165, in step\n    details = fn() or {}\n              ~~^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 400, in up_head\n    alembic(\"upgrade\", work, \"head\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 147, in alembic\n    command.upgrade(cfg, target or \"head\")\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\alembic\\command.py\", line 487, in upgrade\n    script.run_env()\n    ~~~~~~~~~~~~~~^^\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n"
+      },
+      "seconds": 0.059
+    },
+    {
+      "step": 8,
+      "name": "upgrade head again is a no-op (idempotent)",
+      "ok": false,
+      "details": {
+        "error": "OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\base.py\", line 1963, in _exec_single_context\n    self.dialect.do_execute(\n    ~~~~~~~~~~~~~~~~~~~~~~~^\n        cursor, str_statement, effective_parameters, context\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\default.py\", line 943, in do_execute\n    cursor.execute(statement, parameters)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 149, in execute\n    self._adapt_connection._handle_exception(error)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 300, in _handle_exception\n    raise error\nsqlite3.OperationalError: table ingestion_batches already exists\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 165, in step\n    details = fn() or {}\n              ~~^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 411, in up_again\n    alembic(\"upgrade\", work, \"head\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 147, in alembic\n    command.upgrade(cfg, target or \"head\")\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\alembic\\command.py\", line 487, in upgrade\n    script.run_env()\n    ~~~~~~~~~~~~~~^^\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n"
+      },
+      "seconds": 0.054
+    },
+    {
+      "step": 9,
+      "name": "Constraint probes on a throw-away copy (idempotency, disappearance, corroboration, versions)",
+      "ok": false,
+      "details": {
+        "cases": [
+          {
+            "case": "batch: first daily slot",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "batch: same trigger + slot again (retry must resume, not duplicate)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: ingestion_batches.trigger, ingestion_batches.scheduled_for",
+            "ok": true
+          },
+          {
+            "case": "batch: second batch, other slot",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "observation: first",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "observation: retry with ON CONFLICT DO NOTHING writes nothing",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "record_observations rows=6709",
+            "ok": false
+          },
+          {
+            "case": "observation: duplicate without ON CONFLICT is refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_observations.batch_id, record_observations.source_name, record_observations.record_type, record_observations.dedup_hash",
+            "ok": true
+          },
+          {
+            "case": "observation: same item in another batch is a new observation",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "record_observations rows=6710",
+            "ok": false
+          },
+          {
+            "case": "observation: unknown origin refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_observations_origin",
+            "ok": true
+          },
+          {
+            "case": "observation: unknown batch refused (foreign key)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "FOREIGN KEY constraint failed",
+            "ok": true
+          },
+          {
+            "case": "observation: baseline_backfill origin accepted",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: v1 open",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: second open version for the same record refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash",
+            "ok": true
+          },
+          {
+            "case": "version: v2 open after v1 closed",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "version: duplicate version number refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash, record_versions.version_no",
+            "ok": true
+          },
+          {
+            "case": "version: same content in the same batch refused (retry)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: record_versions.record_type, record_versions.dedup_hash, record_versions.content_hash, record_versions.batch_id",
+            "ok": true
+          },
+          {
+            "case": "version: unknown origin refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_versions_origin",
+            "ok": true
+          },
+          {
+            "case": "version: valid_to before valid_from refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_record_versions_interval",
+            "ok": true
+          },
+          {
+            "case": "metric: first sample",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "metric: same subject/metric/source/batch refused (retry)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: metric_snapshots.subject_kind, metric_snapshots.subject_key, metric_snapshots.metric, metric_snapshots.source_name, metric_snapshots.batch_id",
+            "ok": true
+          },
+          {
+            "case": "metric: next batch accepted",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: complete scan with a reason refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_catalogue_scans_reason",
+            "ok": true
+          },
+          {
+            "case": "scan: incomplete scan with reason",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: complete scan",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "scan: second scan of a source in one batch refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: catalogue_scans.batch_id, catalogue_scans.source_name",
+            "ok": true
+          },
+          {
+            "case": "presence: disappeared without a catalogue scan refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_presence_events_disappear_needs_scan",
+            "ok": true
+          },
+          {
+            "case": "presence: disappeared with a scan",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "presence: duplicate event in the same batch refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: presence_events.source_name, presence_events.record_type, presence_events.dedup_hash, presence_events.batch_id, presence_events.event",
+            "ok": true
+          },
+          {
+            "case": "presence: unknown event refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_presence_events_event",
+            "ok": true
+          },
+          {
+            "case": "entity: first active",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "entity: second active with the same key refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: entities.normalized_key",
+            "ok": true
+          },
+          {
+            "case": "entity: merged without a target refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_entities_merge_target",
+            "ok": true
+          },
+          {
+            "case": "entity: merged with a target (same key allowed when merged)",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "resolution: open decision",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "resolution: second open decision for the same name+source refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: entity_resolution_events.raw_name, entity_resolution_events.source_url",
+            "ok": true
+          },
+          {
+            "case": "resolution: new decision after supersede",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "claim: corroborated with one source group refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_claims_corroborated_needs_two_groups",
+            "ok": true
+          },
+          {
+            "case": "claim: single source",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "claim: same statement twice refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: claims.claim_kind, claims.subject_entity_id, claims.predicate, claims.object_key, claims.value",
+            "ok": true
+          },
+          {
+            "case": "evidence: link to an existing record version",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "evidence: same version twice for one claim refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: evidence_links.claim_id, evidence_links.record_type, evidence_links.dedup_hash, evidence_links.version_no",
+            "ok": true
+          },
+          {
+            "case": "evidence: link to a missing record version refused (foreign key)",
+            "expected": "refused",
+            "result": "refused",
+            "message": "FOREIGN KEY constraint failed",
+            "ok": true
+          },
+          {
+            "case": "evidence: empty snippet refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_evidence_links_snippet",
+            "ok": true
+          },
+          {
+            "case": "reliability: ok_runs above runs refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "CHECK constraint failed: ck_source_reliability_ok_runs",
+            "ok": true
+          },
+          {
+            "case": "reliability: one row per source and day",
+            "expected": "accepted",
+            "result": "accepted",
+            "message": "",
+            "ok": true
+          },
+          {
+            "case": "reliability: second row for the same day refused",
+            "expected": "refused",
+            "result": "refused",
+            "message": "UNIQUE constraint failed: source_reliability_daily.source, source_reliability_daily.day",
+            "ok": true
+          }
+        ],
+        "passed": 43,
+        "total": 45,
+        "foreign_key_violations": [],
+        "existing_tables_unchanged_on_probe": true,
+        "probe_copy_deleted": true
+      },
+      "seconds": 0.204
+    },
+    {
+      "step": 10,
+      "name": "downgrade 0001_baseline: history tables removed, existing tables unchanged",
+      "ok": false,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": []
+      },
+      "seconds": 0.236
+    },
+    {
+      "step": 11,
+      "name": "Safety: 'downgrade base' (would drop production tables) is refused",
+      "ok": false,
+      "details": {
+        "revision": "0001_baseline",
+        "existing_tables_unchanged": true,
+        "changed_tables": [],
+        "history_tables_present": 12,
+        "history_tables_empty": true,
+        "integrity": "ok",
+        "unexpected_tables": [],
+        "refused": true,
+        "message": "0001_baseline cannot be downgraded: it would drop the production tables and all their data. To undo everything after the baseline, run `alembic downgrade 0001_baseline`; to roll back a database completely, restore its pre-migration backup."
+      },
+      "seconds": 0.249
+    },
+    {
+      "step": 12,
+      "name": "Re-upgrade head: identical history schema, existing tables unchanged",
+      "ok": false,
+      "details": {
+        "error": "OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\base.py\", line 1963, in _exec_single_context\n    self.dialect.do_execute(\n    ~~~~~~~~~~~~~~~~~~~~~~~^\n        cursor, str_statement, effective_parameters, context\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\default.py\", line 943, in do_execute\n    cursor.execute(statement, parameters)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 149, in execute\n    self._adapt_connection._handle_exception(error)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\sqlalchemy\\dialects\\sqlite\\aiosqlite.py\", line 300, in _handle_exception\n    raise error\nsqlite3.OperationalError: table ingestion_batches already exists\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 165, in step\n    details = fn() or {}\n              ~~^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 452, in reupgrade\n    alembic(\"upgrade\", work, \"head\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\scripts\\phase7a_migration_test.py\", line 147, in alembic\n    command.upgrade(cfg, target or \"head\")\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\.venv\\Lib\\site-packages\\alembic\\command.py\", line 487, in upgrade\n    script.run_env()\n    ~~~~~~~~~~~~~~^^\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table ingestion_batches already exists\n[SQL: \nCREATE TABLE ingestion_batches (\n\tbatch_id VARCHAR(36) NOT NULL, \n\t\"trigger\" VARCHAR(32) NOT NULL, \n\tscheduled_for DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\tfinished_at DATETIME, \n\tstatus VARCHAR(24) NOT NULL, \n\tcode_version VARCHAR(64), \n\tnotes TEXT, \n\tCONSTRAINT pk_ingestion_batches PRIMARY KEY (batch_id), \n\tCONSTRAINT uq_ingestion_batches_trigger_slot UNIQUE (\"trigger\", scheduled_for), \n\tCONSTRAINT ck_ingestion_batches_status CHECK (status IN ('running', 'completed', 'partial', 'failed'))\n)\n\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n"
+      },
+      "seconds": 0.015
+    },
+    {
+      "step": 13,
+      "name": "Safety: Alembic refuses to run against the live data/platform.db without explicit approval",
+      "ok": true,
+      "details": {
+        "refused": true,
+        "message": "Refusing to run migrations against the live database C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db. Phase 7A runs on copies only. Pass -x allow_live=yes only with explicit approval.",
+        "live_file_unchanged": true
+      },
+      "seconds": 0.055
+    },
+    {
+      "step": 14,
+      "name": "Backup restore to a new file: integrity ok, identical to the original",
+      "ok": false,
+      "details": {
+        "backup_sha256_still_matches": true,
+        "restored": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T183208Z\\restored_from_backup.db",
+          "sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+          "bytes": 41025536,
+          "mtime_ns": 1795372330893020000
+        },
+        "integrity": "ok",
+        "matches_original": true,
+        "diff": [],
+        "tables": [
+          "alembic_version",
+          "canonical_entities",
+          "catalogue_scans",
+          "claims",
+          "crawl_checkpoints",
+          "dead_letters",
+          "entities",
+          "entity_mappings",
+          "entity_resolution_events",
+          "evidence_links",
+          "ingestion_batches",
+          "metric_snapshots",
+          "presence_events",
+          "record_observations",
+          "record_versions",
+          "records",
+          "seen_items",
+          "source_groups",
+          "source_reliability_daily",
+          "source_runs"
+        ],
+        "revision": "0002_history_tables"
+      },
+      "seconds": 0.48
+    },
+    {
+      "step": 15,
+      "name": "Rollback by restore: pre-migration backup restored over a migrated copy",
+      "ok": false,
+      "details": {
+        "before_restore": {
+          "revision": "0001_baseline",
+          "tables": 20
+        },
+        "after_restore": {
+          "revision": "0002_history_tables",
+          "tables": [
+            "alembic_version",
+            "canonical_entities",
+            "catalogue_scans",
+            "claims",
+            "crawl_checkpoints",
+            "dead_letters",
+            "entities",
+            "entity_mappings",
+            "entity_resolution_events",
+            "evidence_links",
+            "ingestion_batches",
+            "metric_snapshots",
+            "presence_events",
+            "record_observations",
+            "record_versions",
+            "records",
+            "seen_items",
+            "source_groups",
+            "source_reliability_daily",
+            "source_runs"
+          ],
+          "integrity": "ok"
+        },
+        "matches_original": true,
+        "diff": [],
+        "file": {
+          "path": "C:\\FrontierAtlas-test\\phase7a-20261122T183208Z\\rollback_target.db",
+          "sha256": "ce6e082d522dae4ee63f0ab13629188eaa6f56a14952cfab4eae499ba1c31487",
+          "bytes": 41025536,
+          "mtime_ns": 1795372331460123900
+        }
+      },
+      "seconds": 0.487
+    },
+    {
+      "step": 16,
+      "name": "Live database unchanged (SHA-256, size, modification time)",
+      "ok": true,
+      "details": {
+        "start": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+          "bytes": 41025536,
+          "mtime_ns": 1795368496108282200
+        },
+        "end": {
+          "path": "C:\\Users\\User\\OneDrive\\Documents\\Desktop\\Infotact\\ai-intelligence-platform\\data\\platform.db",
+          "sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+          "bytes": 41025536,
+          "mtime_ns": 1795368496108282200
+        }
+      },
+      "seconds": 0.045
+    }
+  ]
+}

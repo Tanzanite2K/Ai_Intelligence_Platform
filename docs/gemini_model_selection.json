@@ -1,0 +1,181 @@
+{
+  "run_at": "2026-11-21T11:42:03Z",
+  "configured_model": "gemini-2.0-flash",
+  "applied": true,
+  "models_listed": 65,
+  "flash_candidates": [
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-omni-1.1-flash",
+    "gemini-omni-1.2-flash",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3-flash-preview",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview",
+    "gemini-flash-lite-latest"
+  ],
+  "flash_rejected": [
+    {
+      "model": "gemini-2.5-flash-preview-tts",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-2.5-flash-image",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.1-flash-image-preview",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.1-flash-image",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.1-flash-lite-image",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.1-flash-tts-preview",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.8-flash-tts",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.8-flash-lite-tts",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-2.5-flash-native-audio-latest",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-2.5-flash-native-audio-preview-09-2025",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "reason": "non-text variant"
+    },
+    {
+      "model": "gemini-3.1-flash-live-preview",
+      "reason": "non-text variant"
+    }
+  ],
+  "configured_model_listed": false,
+  "tests": [
+    {
+      "model": "gemini-3.8-flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": false,
+        "error": "ProviderTimeoutError: gemini timeout after 60.0s"
+      },
+      "extraction": {
+        "ok": false,
+        "error": "not run"
+      },
+      "budget_within_model_limit": null,
+      "compatible": false
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": false,
+        "error": "ProviderUnavailableError: gemini unavailable 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      },
+      "extraction": {
+        "ok": false,
+        "error": "not run"
+      },
+      "budget_within_model_limit": null,
+      "compatible": false
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": false,
+        "error": "ProviderUnavailableError: gemini unavailable 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      },
+      "extraction": {
+        "ok": false,
+        "error": "not run"
+      },
+      "budget_within_model_limit": null,
+      "compatible": false
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": false,
+        "error": "ProviderUnavailableError: gemini unavailable 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      },
+      "extraction": {
+        "ok": false,
+        "error": "not run"
+      },
+      "budget_within_model_limit": null,
+      "compatible": false
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": false,
+        "error": "InvalidRequestError: gemini invalid request 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+      },
+      "extraction": {
+        "ok": false,
+        "error": "not run"
+      },
+      "budget_within_model_limit": null,
+      "compatible": false
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "minimal_generation": {
+        "ok": true,
+        "seconds": 1.58,
+        "input_tokens": 13,
+        "output_tokens": 5,
+        "thinking_budget_sent": 0
+      },
+      "extraction": {
+        "ok": true,
+        "accepted": {
+          "pricing_model": "FREEMIUM"
+        },
+        "evidence": {
+          "pricing_model": "Atlas is free to start; upgrade to the Pro plan for $20/month."
+        },
+        "status": "VERIFIED",
+        "confidence": 1.0,
+        "attempts": [
+          "gemini:ok"
+        ]
+      },
+      "budget_within_model_limit": true,
+      "compatible": true
+    }
+  ],
+  "selected_model": "gemini-3.1-flash-lite",
+  "env_change": "GEMINI_MODEL: gemini-2.0-flash -> gemini-3.1-flash-lite (only this line changed)"
+}

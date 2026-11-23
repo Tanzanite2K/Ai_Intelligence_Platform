@@ -1,0 +1,8 @@
+-r requirements.txt
+pytest==8.3.5
+pytest-asyncio==0.26.0
+aioresponses==0.7.8
+httpx==0.28.1
+reportlab==4.4.1
+# reportlab requires 'chardet' (any version); requests 2.32.x supports chardet<6 -> pin to avoid RequestsDependencyWarning
+chardet==5.2.0

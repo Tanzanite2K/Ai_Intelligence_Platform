@@ -1,0 +1,306 @@
+{
+  "stamp": "20261123T084016Z",
+  "authorized_by_user": "AUTHORIZE PRODUCTION WRITES (2026-11-23 14:08 IST)",
+  "steps": [
+    {
+      "step": "no writer (app stopped)",
+      "ok": true,
+      "at": "2026-11-23T08:40:22.510668+00:00",
+      "ports_open": {
+        "8000": false,
+        "3000": false
+      },
+      "side_files": [],
+      "mtime_stable_5s": true
+    },
+    {
+      "step": "backup verified",
+      "ok": true,
+      "at": "2026-11-23T08:40:22.821862+00:00",
+      "dir": "C:\\FrontierAtlas-backups\\activation-20261123T083552Z",
+      "cold_sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "online_sha256": "3920c9afcd97394901e97d045e05c78eca13d7409829c9729e6bde54451f050f",
+      "sums_match": [
+        true,
+        true
+      ],
+      "integrity": [
+        "ok",
+        "ok"
+      ],
+      "fk": [
+        0,
+        0
+      ]
+    },
+    {
+      "step": "production hash + configuration",
+      "ok": true,
+      "at": "2026-11-23T08:40:23.086782+00:00",
+      "production_sha256": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "expected": "c916f9cb81a036537318db3b9223c563ef7e3bcd3618269362017180dc1badff",
+      "history_enabled": true,
+      "api_read_only": true,
+      "database_is_production": true
+    },
+    {
+      "step": "pre-write snapshot",
+      "ok": true,
+      "at": "2026-11-23T08:40:23.354387+00:00",
+      "revision": "0002_history_tables"
+    },
+    {
+      "step": "collect",
+      "ok": true,
+      "at": "2026-11-23T08:41:20.208884+00:00",
+      "exit": 0,
+      "batch_status": "completed",
+      "tables_modified": [
+        "crawl_checkpoints",
+        "entity_mappings",
+        "ingestion_batches",
+        "presence_events",
+        "record_observations",
+        "record_versions",
+        "records",
+        "source_runs"
+      ],
+      "delta": {
+        "entity_mappings": 53,
+        "ingestion_batches": 1,
+        "presence_events": 59,
+        "record_observations": 60,
+        "record_versions": 60,
+        "records": 59,
+        "source_runs": 10
+      },
+      "llm_calls": {},
+      "source_statuses": {
+        "himalayas": "OK",
+        "remoteok": "OK",
+        "lever": "OK",
+        "ashby": "OK",
+        "greenhouse": "OK",
+        "openai_news": "OK",
+        "arstechnica_ai": "OK",
+        "mit_tr_ai": "OK",
+        "theverge_ai": "OK",
+        "techcrunch_ai": "OK"
+      },
+      "integrity": "ok",
+      "fk": 0
+    },
+    {
+      "step": "sync-evidence + final verification",
+      "ok": true,
+      "at": "2026-11-23T08:41:27.659449+00:00",
+      "exit": 0,
+      "tables_modified": [
+        "claims",
+        "entities",
+        "entity_resolution_events",
+        "evidence_links"
+      ],
+      "delta": {
+        "claims": 8673,
+        "entities": 2602,
+        "entity_resolution_events": 4990,
+        "evidence_links": 8750
+      },
+      "integrity": "ok",
+      "fk": 0,
+      "revision": "0002_history_tables",
+      "llm_calls": {},
+      "llm_hosts": []
+    }
+  ],
+  "before": {
+    "counts": {
+      "alembic_version": 1,
+      "canonical_entities": 62,
+      "catalogue_scans": 0,
+      "claims": 0,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entities": 0,
+      "entity_mappings": 4944,
+      "entity_resolution_events": 0,
+      "evidence_links": 0,
+      "ingestion_batches": 1,
+      "metric_snapshots": 0,
+      "presence_events": 0,
+      "record_observations": 6708,
+      "record_versions": 6708,
+      "records": 6708,
+      "seen_items": 0,
+      "source_groups": 0,
+      "source_reliability_daily": 0,
+      "source_runs": 42
+    },
+    "integrity": "ok",
+    "fk": 0,
+    "revision": "0002_history_tables"
+  },
+  "collect_command": "python -m src.main collect --trigger manual --no-llm --concurrency 1 --source techcrunch_ai --source theverge_ai --source mit_tr_ai --source arstechnica_ai --source openai_news --source greenhouse --source ashby --source lever --source remoteok --source himalayas",
+  "batch": {
+    "batch_id": "f7d92ead-5c27-50c1-9910-c1d42602748e",
+    "trigger": "manual",
+    "status": "completed",
+    "started_at": "2026-11-23 08:40:24.326765",
+    "finished_at": "2026-11-23 08:41:19.922338"
+  },
+  "source_runs": [
+    {
+      "source": "techcrunch_ai",
+      "status": "OK",
+      "fetched": 20,
+      "stored": 3,
+      "error": ""
+    },
+    {
+      "source": "theverge_ai",
+      "status": "OK",
+      "fetched": 10,
+      "stored": 3,
+      "error": ""
+    },
+    {
+      "source": "mit_tr_ai",
+      "status": "OK",
+      "fetched": 10,
+      "stored": 0,
+      "error": ""
+    },
+    {
+      "source": "arstechnica_ai",
+      "status": "OK",
+      "fetched": 20,
+      "stored": 0,
+      "error": ""
+    },
+    {
+      "source": "openai_news",
+      "status": "OK",
+      "fetched": 1422,
+      "stored": 0,
+      "error": ""
+    },
+    {
+      "source": "greenhouse",
+      "status": "OK",
+      "fetched": 1993,
+      "stored": 3,
+      "error": ""
+    },
+    {
+      "source": "ashby",
+      "status": "OK",
+      "fetched": 1810,
+      "stored": 8,
+      "error": ""
+    },
+    {
+      "source": "lever",
+      "status": "OK",
+      "fetched": 552,
+      "stored": 0,
+      "error": ""
+    },
+    {
+      "source": "remoteok",
+      "status": "OK",
+      "fetched": 100,
+      "stored": 0,
+      "error": ""
+    },
+    {
+      "source": "himalayas",
+      "status": "OK",
+      "fetched": 500,
+      "stored": 43,
+      "error": ""
+    }
+  ],
+  "collect": {
+    "exit": 0,
+    "tables_modified": [
+      "crawl_checkpoints",
+      "entity_mappings",
+      "ingestion_batches",
+      "presence_events",
+      "record_observations",
+      "record_versions",
+      "records",
+      "source_runs"
+    ],
+    "delta": {
+      "entity_mappings": 53,
+      "ingestion_batches": 1,
+      "presence_events": 59,
+      "record_observations": 60,
+      "record_versions": 60,
+      "records": 59,
+      "source_runs": 10
+    },
+    "llm_calls": {}
+  },
+  "sync_evidence": {
+    "exit": 0,
+    "tables_modified": [
+      "claims",
+      "entities",
+      "entity_resolution_events",
+      "evidence_links"
+    ],
+    "delta": {
+      "claims": 8673,
+      "entities": 2602,
+      "entity_resolution_events": 4990,
+      "evidence_links": 8750
+    }
+  },
+  "after": {
+    "counts": {
+      "alembic_version": 1,
+      "canonical_entities": 62,
+      "catalogue_scans": 0,
+      "claims": 8673,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entities": 2602,
+      "entity_mappings": 4997,
+      "entity_resolution_events": 4990,
+      "evidence_links": 8750,
+      "ingestion_batches": 2,
+      "metric_snapshots": 0,
+      "presence_events": 59,
+      "record_observations": 6768,
+      "record_versions": 6768,
+      "records": 6767,
+      "seen_items": 0,
+      "source_groups": 0,
+      "source_reliability_daily": 0,
+      "source_runs": 52
+    },
+    "integrity": "ok",
+    "fk": 0,
+    "revision": "0002_history_tables"
+  },
+  "llm_calls_total": {},
+  "hosts_contacted": {
+    "techcrunch.com": 5,
+    "www.theverge.com": 5,
+    "www.technologyreview.com": 2,
+    "arstechnica.com": 2,
+    "openai.com": 2,
+    "boards-api.greenhouse.io": 6,
+    "api.ashbyhq.com": 7,
+    "api.lever.co": 4,
+    "remoteok.com": 2,
+    "himalayas.app": 26
+  },
+  "llm_hosts_contacted": [],
+  "outcome": "SUCCESS: collection completed, evidence synchronized, verification passed",
+  "exit_code": 0,
+  "production_sha256_final": "c153831df1ca7651ad1f98a10a76e01243748f5f02c4f3ae374ef375eda59c6c"
+}

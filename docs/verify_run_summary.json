@@ -1,0 +1,114 @@
+﻿{
+    "run":  "verify",
+    "finished":  "2026-11-21T17:14:08.2607025+05:30",
+    "steps":  {
+                  "01":  {
+                             "name":  "verified DB backup",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "02":  {
+                             "name":  "integration verification (before model fix)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "03":  {
+                             "name":  "Gemini: list models, test, set GEMINI_MODEL",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "04":  {
+                             "name":  "integration verification (after model fix)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "g_llm":  {
+                                "name":  "gate",
+                                "status":  "SKIPPED",
+                                "exit_code":  null,
+                                "reason":  "Gemini=FAIL"
+                            },
+                  "g_sheets":  {
+                                   "name":  "gate",
+                                   "status":  "OK",
+                                   "exit_code":  null,
+                                   "reason":  "SA=PASS Sheets=PASS"
+                               },
+                  "05":  {
+                             "name":  "live LLM checks (direct, invalid-key fallback, real Groq/DeepSeek failures, chunking, hallucination probe)",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "reason":  "prerequisite \u0027g_llm\u0027 not OK"
+                         },
+                  "06":  {
+                             "name":  "LLM news enrichment",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "reason":  "not requested (run with -Enrich; updates 16 news records)"
+                         },
+                  "07":  {
+                             "name":  "LLM product pricing enrichment",
+                             "status":  "SKIPPED",
+                             "exit_code":  null,
+                             "reason":  "not requested (run with -Enrich)"
+                         },
+                  "08":  {
+                             "name":  "SQLite integrity_check",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "09":  {
+                             "name":  "data audit",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "10":  {
+                             "name":  "compare backup vs now",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "11":  {
+                             "name":  "Google Sheets export (PRIVATE) + read-back",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "11b":  {
+                              "name":  "sheets read-back",
+                              "status":  "OK",
+                              "exit_code":  null,
+                              "reason":  "six_tabs=True rows_match=True public=False"
+                          },
+                  "12":  {
+                             "name":  "pytest (full suite)",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "13":  {
+                             "name":  "ruff",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "14":  {
+                             "name":  "secret scan",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         },
+                  "15":  {
+                             "name":  "FINAL_REPORT.md",
+                             "status":  "OK",
+                             "exit_code":  0,
+                             "reason":  ""
+                         }
+              }
+}

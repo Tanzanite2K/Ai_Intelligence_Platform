@@ -1,0 +1,418 @@
+{
+  "ok": true,
+  "checks": {
+    "integrity_ok": true,
+    "record_counts_unchanged": true,
+    "non_news_records_unchanged": true,
+    "out_of_scope_news_unchanged": true,
+    "news_identity_unchanged": true,
+    "dead_letters_preserved": true,
+    "other_tables_unchanged": true,
+    "existing_mappings_unchanged": true,
+    "new_mappings_only_for_recovered_articles": true,
+    "no_duplicate_mappings": true,
+    "every_stored_organisation_has_a_mapping": true
+  },
+  "before": {
+    "counts": {
+      "canonical_entities": 62,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entity_mappings": 4892,
+      "records": 6708,
+      "seen_items": 0,
+      "source_runs": 42
+    },
+    "news_tagged": 0,
+    "news_untagged": 16,
+    "dead_letters_by_stage": {
+      "llm.news_entities": 16
+    }
+  },
+  "after": {
+    "counts": {
+      "canonical_entities": 62,
+      "crawl_checkpoints": 18,
+      "dead_letters": 16,
+      "entity_mappings": 4944,
+      "records": 6708,
+      "seen_items": 0,
+      "source_runs": 42
+    },
+    "news_tagged": 15,
+    "news_untagged": 1,
+    "dead_letters_by_stage": {
+      "llm.news_entities": 16
+    }
+  },
+  "new_mappings": [
+    {
+      "original_name": "METR",
+      "canonical_name": "METR",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "UC Berkeley",
+      "canonical_name": "UC Berkeley",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Boston University",
+      "canonical_name": "Boston University",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Uber",
+      "canonical_name": "Uber",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast"
+    },
+    {
+      "original_name": "Signal",
+      "canonical_name": "Signal",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Apple",
+      "canonical_name": "Apple",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Microsoft",
+      "canonical_name": "Microsoft",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Meta",
+      "canonical_name": "Meta",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    },
+    {
+      "original_name": "Google DeepMind",
+      "canonical_name": "Google DeepMind",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building"
+    },
+    {
+      "original_name": "Microsoft Research Cambridge",
+      "canonical_name": "Microsoft Research Cambridge",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too"
+    },
+    {
+      "original_name": "SpaceX",
+      "canonical_name": "SpaceX",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "StarCloud",
+      "canonical_name": "Starcloud",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Tesla",
+      "canonical_name": "Tesla",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Terafab",
+      "canonical_name": "Terafab",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing"
+    },
+    {
+      "original_name": "Nvidia",
+      "canonical_name": "NVIDIA",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Anthropic",
+      "canonical_name": "Anthropic",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Toyota",
+      "canonical_name": "Toyota",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Waymo",
+      "canonical_name": "Waymo",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Tesla",
+      "canonical_name": "Tesla",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Our Next Energy",
+      "canonical_name": "Our Next Energy",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues"
+    },
+    {
+      "original_name": "Anker",
+      "canonical_name": "Anker",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Logitech",
+      "canonical_name": "Logitech",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "GitHub",
+      "canonical_name": "GitHub",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "OpenAI",
+      "canonical_name": "OpenAI",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Microsoft",
+      "canonical_name": "Microsoft",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Amazon",
+      "canonical_name": "Amazon",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Insta360",
+      "canonical_name": "Insta360",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Autonomous",
+      "canonical_name": "Autonomous",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar"
+    },
+    {
+      "original_name": "Meta",
+      "canonical_name": "Meta",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers"
+    },
+    {
+      "original_name": "Baseten",
+      "canonical_name": "Baseten",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Google",
+      "canonical_name": "Google",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Liquid AI",
+      "canonical_name": "Liquid AI",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "Hugging Face",
+      "canonical_name": "Hugging Face",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models"
+    },
+    {
+      "original_name": "RadixArk",
+      "canonical_name": "RadixArk",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Eigent AI",
+      "canonical_name": "Eigent AI",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Qwen",
+      "canonical_name": "Alibaba Qwen",
+      "method": "ALIAS",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "Alibaba",
+      "canonical_name": "Alibaba",
+      "method": "NEW",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model"
+    },
+    {
+      "original_name": "NVIDIA",
+      "canonical_name": "NVIDIA",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model"
+    },
+    {
+      "original_name": "Hugging Face",
+      "canonical_name": "Hugging Face",
+      "method": "EXACT",
+      "needs_review": 0,
+      "source_url": "https://marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model"
+    }
+  ],
+  "problems": {
+    "bad_mapping_refs": [],
+    "organisations_without_mapping": []
+  }
+}

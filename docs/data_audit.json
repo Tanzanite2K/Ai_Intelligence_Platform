@@ -1,0 +1,625 @@
+{
+  "audited_at": "2026-11-21T11:43:22Z",
+  "database": "./data/platform.db",
+  "verticals": {
+    "STARTUP": {
+      "stored": 2509,
+      "by_source": {
+        "Y Combinator": 2125,
+        "Hugging Face Hub": 384
+      },
+      "schema_invalid": 0,
+      "invalid_source_urls": 0,
+      "non_iso_collectedAt": 0,
+      "duplicate_natural_keys": 0,
+      "duplicate_source_urls": 0,
+      "validation_status": {
+        "VERIFIED": 2509
+      },
+      "with_employee_count": 2085,
+      "with_website": 2103
+    },
+    "PRODUCT": {
+      "stored": 1800,
+      "by_source": {
+        "Hugging Face Hub": 1800
+      },
+      "schema_invalid": 0,
+      "invalid_source_urls": 0,
+      "non_iso_collectedAt": 0,
+      "duplicate_natural_keys": 0,
+      "duplicate_source_urls": 0,
+      "validation_status": {
+        "VERIFIED": 1200,
+        "PARTIAL": 600
+      },
+      "pricing_model": {
+        "FREE": 1200,
+        "None": 600
+      },
+      "with_startup_name": 1800,
+      "llm_enriched": 0
+    },
+    "RESEARCH_PAPER": {
+      "stored": 2290,
+      "by_source": {
+        "Hugging Face Papers": 2290
+      },
+      "schema_invalid": 0,
+      "invalid_source_urls": 0,
+      "non_iso_collectedAt": 0,
+      "duplicate_natural_keys": 0,
+      "duplicate_source_urls": 0,
+      "validation_status": {
+        "VERIFIED": 2290
+      },
+      "with_title": 2290,
+      "with_authors": 2290,
+      "arxiv_paper_url": 2290,
+      "with_github_url": 2290,
+      "with_stars": 2290,
+      "stars_source": {
+        "github_api": 2290
+      },
+      "stars_checked_last_24h_live": 2290,
+      "published_date_iso": 2290,
+      "published_range": [
+        "2026-05-19T00:00:00Z",
+        "2026-11-19T00:00:00Z"
+      ]
+    },
+    "JOB": {
+      "stored": 93,
+      "by_source": {
+        "Ashby": 31,
+        "Greenhouse": 19,
+        "Himalayas": 43
+      },
+      "schema_invalid": 0,
+      "invalid_source_urls": 0,
+      "non_iso_collectedAt": 0,
+      "duplicate_natural_keys": 0,
+      "duplicate_source_urls": 0,
+      "validation_status": {
+        "VERIFIED": 93
+      },
+      "verified_fresh_now": 92,
+      "verified_but_older_than_window_now": 1,
+      "unverified_dates": 0,
+      "published_equals_collected": 0,
+      "date_sources": {
+        "ashby": 31,
+        "greenhouse": 19,
+        "himalayas": 43
+      }
+    },
+    "NEWS": {
+      "stored": 16,
+      "by_source": {
+        "TechCrunch": 5,
+        "The Verge": 4,
+        "MIT Technology Review": 1,
+        "Ars Technica": 3,
+        "MarkTechPost": 3
+      },
+      "schema_invalid": 0,
+      "invalid_source_urls": 0,
+      "non_iso_collectedAt": 0,
+      "duplicate_natural_keys": 0,
+      "duplicate_source_urls": 0,
+      "validation_status": {
+        "VERIFIED": 16
+      },
+      "verified_fresh_now": 16,
+      "verified_but_older_than_window_now": 0,
+      "unverified_dates": 0,
+      "published_equals_collected": 0,
+      "date_sources": {
+        "rss": 16
+      },
+      "with_full_text": 15
+    }
+  },
+  "entity_resolution": {
+    "mappings": 4892,
+    "by_method": {
+      "NEW": 2490,
+      "EXACT": 1997,
+      "ALIAS": 391,
+      "REVIEW": 12,
+      "FUZZY": 2
+    },
+    "auto_resolved_to_existing": 2390,
+    "new_entities": 2490,
+    "needs_review": 12,
+    "merges_for_manual_check": [
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org"
+      },
+      {
+        "originalName": "PaddlePaddle",
+        "canonicalName": "Baidu",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/PaddlePaddle"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5.2"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm-6b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5.3"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-OCR"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm2-6b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7-Flash"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5.1"
+      },
+      {
+        "originalName": "PaddlePaddle",
+        "canonicalName": "Baidu",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.5"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/glm-4-9b-chat"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.6"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm3-6b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-Image"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.5V"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/CogVideoX-5b"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/olmOCR-7B-0225-preview"
+      },
+      {
+        "originalName": "PaddlePaddle",
+        "canonicalName": "Baidu",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/OLMo-7B"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.5-Air"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.6V-Flash"
+      },
+      {
+        "originalName": "PaddlePaddle",
+        "canonicalName": "Baidu",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/Molmo-7B-D-0924"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4-32B-0414"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/AutoGLM-Phone-9B"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm-6b-int4"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.6V"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-ASR-Nano-2512"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/CogVideoX-2b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/SCAIL-2"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-TTS"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/CogVideoX-5b-I2V"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/Molmo-72B-0924"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm2-6b-32k"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/codegeex4-all-9b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-5.2-FP8"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/glm-4v-9b"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/codegeex2-6b"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/CogView4-6B"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm3-6b-32k"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/AutoGLM-Phone-9B-Multilingual"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/chatglm2-6b-int4"
+      },
+      {
+        "originalName": "Ai2",
+        "canonicalName": "Allen Institute for AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/allenai/longformer-base-4096"
+      },
+      {
+        "originalName": "Z.ai",
+        "canonicalName": "Zhipu AI",
+        "matchMethod": "ALIAS",
+        "confidence": 0.99,
+        "sourceUrl": "https://huggingface.co/zai-org/cogvlm2-llama3-chat-19B"
+      }
+    ],
+    "merges_for_manual_check_count": 51
+  },
+  "source_runs_latest": {
+    "producthunt": {
+      "status": "INACCESSIBLE",
+      "fetched": 0,
+      "stored": 0,
+      "error": "access denied HTTP 401",
+      "at": "2026-11-21T09:28:04.082897"
+    },
+    "yc_startups": {
+      "status": "PARTIAL",
+      "fetched": 3475,
+      "stored": 25,
+      "error": "https://yc-oss.github.io/api/industries/artificial-intelligence.json: HTTP 404",
+      "at": "2026-11-21T11:06:15.705749"
+    },
+    "research_papers": {
+      "status": "PARTIAL",
+      "fetched": 3567,
+      "stored": 2290,
+      "error": "GitHub rate limit exhausted until 2026-11-21T10:26:59+00:00; GitHub rate limit exhausted until 2026-11-21T10:26:59+00:00; GitHub rate limit exhausted until 2026-11-21T10:26:59+00:00; GitHub rate limit",
+      "at": "2026-11-21T09:28:04.415182"
+    },
+    "techcrunch_ai": {
+      "status": "OK",
+      "fetched": 20,
+      "stored": 1,
+      "error": "",
+      "at": "2026-11-21T11:06:31.258242"
+    },
+    "theverge_ai": {
+      "status": "OK",
+      "fetched": 10,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:06:31.272864"
+    },
+    "mit_tr_ai": {
+      "status": "OK",
+      "fetched": 10,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:06:31.243542"
+    },
+    "arstechnica_ai": {
+      "status": "PARTIAL",
+      "fetched": 20,
+      "stored": 0,
+      "error": "article https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers: FetchError",
+      "at": "2026-11-21T11:06:32.679436"
+    },
+    "hf_products": {
+      "status": "OK",
+      "fetched": 29,
+      "stored": 25,
+      "error": "",
+      "at": "2026-11-21T09:26:50.665718"
+    },
+    "hf_orgs": {
+      "status": "OK",
+      "fetched": 50,
+      "stored": 25,
+      "error": "",
+      "at": "2026-11-21T09:26:50.699444"
+    },
+    "ashby": {
+      "status": "OK",
+      "fetched": 1807,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:07:29.261393"
+    },
+    "greenhouse": {
+      "status": "OK",
+      "fetched": 2001,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:07:29.306186"
+    },
+    "venturebeat_ai": {
+      "status": "FAILED",
+      "fetched": 0,
+      "stored": 0,
+      "error": "feed fetch failed: HTTP 429",
+      "at": "2026-11-21T11:06:31.224874"
+    },
+    "remoteok": {
+      "status": "OK",
+      "fetched": 100,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:07:29.292146"
+    },
+    "lever": {
+      "status": "OK",
+      "fetched": 552,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:07:29.276246"
+    },
+    "himalayas": {
+      "status": "OK",
+      "fetched": 500,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:07:32.376371"
+    },
+    "openai_news": {
+      "status": "OK",
+      "fetched": 1421,
+      "stored": 0,
+      "error": "",
+      "at": "2026-11-21T11:06:40.134315"
+    },
+    "the_decoder": {
+      "status": "INACCESSIBLE",
+      "fetched": 0,
+      "stored": 0,
+      "error": "feed inaccessible: access denied HTTP 403",
+      "at": "2026-11-21T11:06:40.685884"
+    },
+    "marktechpost": {
+      "status": "OK",
+      "fetched": 10,
+      "stored": 3,
+      "error": "",
+      "at": "2026-11-21T11:06:41.358547"
+    }
+  },
+  "dead_letters": 16
+}
